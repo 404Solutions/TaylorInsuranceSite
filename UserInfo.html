@@ -1,0 +1,56 @@
+<html>
+  <form id="userInfo" class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>User Information</h1>
+	  <p>Please fill in all fields</p>
+      <hr>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter name" name="name" required>
+	  
+	  <label for="gender"><b>Gender</b></label>
+      <input type="radio" name="gender" value="male" required> Male
+	  <input type="radio" name="gender" value="female" required> Female
+	  <input type="radio" name="gender" value="other" required> Other
+	  
+	  </br></br>
+
+      <label for="dob"><b>Date of Birth</b></label>
+      <input type="date" placeholder="Enter date of birth" name="dob" required>
+	  
+	  <label for="phone"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter phone number" name="phone" required>
+	  
+	  <label for="email"><b>E-mail</b></label>
+      <input type="email" placeholder="Enter e-mail" name="email" required>
+	  
+	  </br></br>
+	  
+	  <label for="address"><b>Address</b></label>
+      <input type="text" placeholder="Enter address" name="address" required>
+	  
+	  <label for="City"><b>City</b></label>
+      <input type="text" placeholder="Enter city" name="city" required>
+	  
+	  <label for="province"><b>Province</b></label>
+      <input type="text" placeholder="Enter province" name="province" required>
+	  
+	  <label for="postalCode"><b>Postal Code</b></label>
+      <input type="text" placeholder="Enter postal code" name="postalCode" required>
+	  
+	  </br></br>
+	  
+	  <label for="licenseNumber"><b>Driver License Number</b></label>
+      <input type="text" placeholder="Enter license number" name="licenseNumber" required>
+	  
+	  <label for="licenseDate"><b>License Issue Date</b></label>
+      <input type="date" placeholder="Enter license issue date" name="licenseDate" required>
+	  
+	  </br></br>
+	  
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('userInfo').style.display='initial'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="update">Update</button>
+      </div>
+    </div>
+  </form>
+</html>

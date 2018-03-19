@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- autoQuote.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Auto Quote Form</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Automotive Quote</h1>
+         <p>Please fill in all fields and click Submit</p>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <label>Vehicle Make:</label>
+            <h:inputText id="vehicleMakeInputText" required="true"
+                requiredMessage="Please enter vehicle make"
+                value="#{validationBean.vehicleMake}"
+                validatorMessage="Vehicle make must be fewer than 20 characters">
+                <f:validateLength maximum="20"/>
+            </h:inputText>
+            <label>Vehicle Model:</label>
+            <h:inputText id="vehicleModelInputText" required="true"
+                requiredMessage="Please enter vehicle model"
+                value="#{validationBean.vehicleModel}"
+                validatorMessage="Vehicle model must be fewer than 20 characters">
+                <f:validateLength maximum="20"/>
+            </h:inputText>
+            <label>Vehicle Year:</label>
+            <h:inputText id="vehicleYearInputText" required="true"
+                requiredMessage="Please enter vehicle year(yyyy)"
+                value="#{validationBean.vehicleYear}"
+                validatorMessage="Invalid year format">
+                <f:validateRegex pattern="^\d{4}$"/>
+            </h:inputText>
+            <label>Plate Number:</label>
+            <h:inputText id="plateNumberInputText" required="true"
+                requiredMessage="Please enter plate number"
+                value="#{validationBean.plateNumber}"
+                validatorMessage="Invalid plate number format">
+                <f:validateRegex pattern="^[A-Z]{1,3}-[A-Z]{1,2}-[0-9]{1,4}$"/>
+            </h:inputText>
+         </h:panelGrid>      
+         <h:commandButton value="Cancel" action="option?faces-redirect=true"/>
+         <h:commandButton value="Submit"/>
+      </h:form>
+   </h:body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- index.xhtml -->
+<!-- user login page -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>User Login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>User Login</h1>
+            <p>Please fill in all fields and click Login</p>
+            <h:panelGrid columns="1" style="height: 96px; width:456px;">
+                <label>Username:</label>
+                <h:inputText id="usernameInputText" required="true"
+                    requiredMessage="Please enter username"
+                    value="#{validationBean.username}"
+                    validatorMessage="Username must be at least than 4 characters">
+                    <f:validateLength minimum="4"/>
+                </h:inputText>
+                <label>Password:</label>
+                <h:inputSecret id="passwordInputText" required="true"
+                    requiredMessage="Please enter password"
+                    value="#{validationBean.password}"
+                    validatorMessage="Password must be at least 8 characters long">
+                    <f:validateLength minimum="8"/>
+                </h:inputSecret>
+            </h:panelGrid>
+            <h:commandButton value="Login" action="option?faces-redirect=true" /> 
+        </h:form>
+    </h:body>
+</html>

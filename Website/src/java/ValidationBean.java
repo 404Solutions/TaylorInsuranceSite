@@ -17,6 +17,7 @@ public class ValidationBean implements Serializable{
     private String licenseDate;
     private String username;
     private String password;
+    private String secondPassword;
     private String vehicleModel;
     private String vehicleMake;
     private String vehicleYear;
@@ -127,6 +128,14 @@ public class ValidationBean implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+     public String getSecondPassword() {
+        return secondPassword;
+    }
+
+    public void setSecondPassword(String secondPassword) {
+        this.secondPassword = secondPassword;
     }
     
     public String getVehicleModel() {

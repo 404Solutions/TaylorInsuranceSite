@@ -14,14 +14,14 @@
          <h1>User Information</h1>
          <p>Please fill in all fields</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <label>Name:</label>
+            <h:outputLabel>Name:</h:outputLabel>
             <h:inputText id="nameInputText" required="true"
                 requiredMessage="Please enter name"
                 value="#{validationBean.name}"
                 validatorMessage="First name must be fewer than 40 characters">
                 <f:validateLength maximum="40"/>
             </h:inputText>
-            <label>Gender:</label>
+            <h:outputLabel>Gender:</h:outputLabel>
             <h:selectOneRadio id="osSelectOneRadio" required="true"
                requiredMessage="Please select a gender"
                value="#{validationBean.gender}">
@@ -29,63 +29,63 @@
                <f:selectItem itemValue="Female" itemLabel="Female"/>
                <f:selectItem itemValue="Other" itemLabel="Other"/>
             </h:selectOneRadio>
-            <label>Date of Birth:</label>
+            <h:outputLabel>Date of Birth:</h:outputLabel>
             <h:inputText id="dobInputText" required="true"
                 requiredMessage="Please enter date of birth(yyyy-mm-dd)"
                 value="#{validationBean.dob}"
                 validatorMessage="Invalid date of birth format">
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
-            <label>Phone:</label>
+            <h:outputLabel>Phone:</h:outputLabel>
             <h:inputText id="phoneInputText" required="true"
                 requiredMessage="Please enter phone number"
                 value="#{validationBean.phone}"
                 validatorMessage="Invalid phone number format">
                 <f:validateRegex pattern="((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}"/>
             </h:inputText>
-            <label>E-mail:</label>
+            <h:outputLabel>E-mail:</h:outputLabel>
             <h:inputText id="emailInputText" required="true"
                 requiredMessage="Please enter e-mail"
                 value="#{validationBean.email}"
                 validatorMessage="Invalid e-mail address format">
                 <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
             </h:inputText>
-            <label>Address:</label>
+            <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"
                 value="#{validationBean.address}"
                 validatorMessage="Address must be at least than 15 characters">
                 <f:validateLength minimum="15"/>
             </h:inputText>
-            <label>City:</label>
+            <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
                 requiredMessage="Please enter city"
                 value="#{validationBean.city}"
                 validatorMessage="City must be fewer than 15 characters">
                 <f:validateLength maximum="15"/>
             </h:inputText>
-            <label>Province:</label>
+            <h:outputLabel>Province:</h:outputLabel>
             <h:inputText id="provinceInputText" required="true"
                 requiredMessage="Please enter province"
                 value="#{validationBean.province}"
                 validatorMessage="Province must be at least than 2 characters">
                 <f:validateLength minimum="2"/>
             </h:inputText>
-            <label>Postal Code:</label>
+            <h:outputLabel>Postal Code:</h:outputLabel>
             <h:inputText id="postalCodeInputText" required="true"
-                requiredMessage="Please enter cpostal code"
+                requiredMessage="Please enter postal code"
                 value="#{validationBean.postalCode}"
                 validatorMessage="Invalid postal code format">
-                <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
+                <f:validateRegex pattern="^[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
-            <label>Drivers License Number:</label>
+            <h:outputLabel>Drivers License Number:</h:outputLabel>
             <h:inputText id="licenseNumberInputText" required="true"
                 requiredMessage="Please enter drivers license number"
                 value="#{validationBean.licenseNumber}"
                 validatorMessage="Drivers license number must be at least than 10 characters">
                 <f:validateLength minimum="10"/>
             </h:inputText>
-            <label>License Issue Date:</label>
+            <h:outputLabel>License Issue Date:</h:outputLabel>
             <h:inputText id="licenseDateInputText" required="true"
                 requiredMessage="Please enter license issue date(yyyy-mm-dd)"
                 value="#{validationBean.licenseDate}"
@@ -93,9 +93,8 @@
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
          </h:panelGrid>
-         <!-- doesn't go back to option -->
-         <h:commandButton value="Cancel" action="option?faces-redirect=true"/>
-         <h:commandButton value="Update"/>
+         <h:commandButton value="Update" action="option?faces-redirect=true"/>
+         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
 </html>

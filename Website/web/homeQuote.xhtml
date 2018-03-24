@@ -14,58 +14,58 @@
          <h1>Home Quote</h1>
          <p>Please fill in all fields and click Submit</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-             <label>Year Built:</label>
+             <h:outputLabel>Year Built:</h:outputLabel>
             <h:inputText id="homeYearInputText" required="true"
                 requiredMessage="Please enter year built(yyyy)"
                 value="#{validationBean.homeYear}"
                 validatorMessage="Invalid year format">
                 <f:validateRegex pattern="^\d{4}$"/>
             </h:inputText>
-            <label>Type of Dwelling:</label>
+            <h:outputLabel>Type of Dwelling:</h:outputLabel>
             <h:inputText id="homeTypeInputText" required="true"
                 requiredMessage="Please enter type of dwelling"
                 value="#{validationBean.homeType}"
                 validatorMessage="Type of dwelling must be fewer than 20 characters">
                 <f:validateLength maximum="20"/>
             </h:inputText>
-            <label>Heating Type:</label>
+            <h:outputLabel>Heating Type:</h:outputLabel>
             <h:inputText id="heatingTypeInputText" required="true"
                 requiredMessage="Please enter heating type"
                 value="#{validationBean.heatingType}"
                 validatorMessage="Heating type must be fewer than 25 characters">
                 <f:validateLength maximum="25"/>
             </h:inputText>
-            <label>Address:</label>
+            <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"
                 value="#{validationBean.address}"
                 validatorMessage="Address must be at least than 15 characters">
                 <f:validateLength minimum="15"/>
             </h:inputText>
-            <label>City:</label>
+            <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
                 requiredMessage="Please enter city"
                 value="#{validationBean.city}"
                 validatorMessage="City must be fewer than 15 characters">
                 <f:validateLength maximum="15"/>
             </h:inputText>
-            <label>Province:</label>
+            <h:outputLabel>Province:</h:outputLabel>
             <h:inputText id="provinceInputText" required="true"
                 requiredMessage="Please enter province"
                 value="#{validationBean.province}"
                 validatorMessage="Province must be at least than 2 characters">
                 <f:validateLength minimum="2"/>
             </h:inputText>
-            <label>Postal Code:</label>
+            <h:outputLabel>Postal Code:</h:outputLabel>
             <h:inputText id="postalCodeInputText" required="true"
                 requiredMessage="Please enter postal code"
                 value="#{validationBean.postalCode}"
                 validatorMessage="Invalid postal code format">
                 <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
-         </h:panelGrid>      
-         <h:commandButton value="Cancel" action="option?faces-redirect=true"/>
+         </h:panelGrid>  
          <h:commandButton value="Submit"/>
+         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
 </html>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- homeQuoteResult.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Home Quote</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Home Quote</h1>
+         <h:outputLabel>Quote ID:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Date Quoted:</h:outputLabel>
+            <h:outputLabel>Expiry Date:</h:outputLabel>
+            <h:outputLabel>Base Premium:</h:outputLabel>
+            <h:outputLabel>Tax:</h:outputLabel>
+            <h:outputLabel>Total:</h:outputLabel>
+         </h:panelGrid> 
+         <h:outputLabel>Home ID:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Year Built:</h:outputLabel>
+            <h:outputLabel>Type of Dwelling:</h:outputLabel>
+            <h:outputLabel>Heating Type:</h:outputLabel>
+            <h:outputLabel>Address:</h:outputLabel>
+            <h:outputLabel>City:</h:outputLabel>
+            <h:outputLabel>Province:</h:outputLabel>
+            <h:outputLabel>Postal Code:</h:outputLabel>
+         </h:panelGrid> 
+         <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton value="Generate Policy"/>
+      </h:form>
+   </h:body>
+</html>

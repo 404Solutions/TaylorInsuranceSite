@@ -39,8 +39,8 @@
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"
                 value="#{validationBean.address}"
-                validatorMessage="Address must be at least than 15 characters">
-                <f:validateLength minimum="15"/>
+                validatorMessage="Address must be fewer than 30 characters">
+                <f:validateLength maximum="30"/>
             </h:inputText>
             <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
@@ -64,7 +64,7 @@
                 <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
          </h:panelGrid>  
-         <h:commandButton value="Submit"/>
+         <h:commandButton value="Submit" action="homeQuoteResult?faces-redirect=true"/>
          <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>

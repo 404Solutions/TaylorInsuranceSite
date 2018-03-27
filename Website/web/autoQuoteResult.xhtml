@@ -14,11 +14,21 @@
          <h1>Automotive Quote</h1>
          <h:outputLabel>Quote ID:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Date Quoted:</h:outputLabel>
+            <h:outputLabel>Expiry Date:</h:outputLabel>
+            <h:outputLabel>Base Premium:</h:outputLabel>
+            <h:outputLabel>Tax:</h:outputLabel>
+            <h:outputLabel>Total:</h:outputLabel>
+         </h:panelGrid> 
+         <h:outputLabel>Vehicle ID:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Vehicle Make:</h:outputLabel>
             <h:outputLabel>Vehicle Model:</h:outputLabel>
             <h:outputLabel>Vehicle Year:</h:outputLabel>
             <h:outputLabel>Plate Number:</h:outputLabel>
-         </h:panelGrid>   
+            <h:outputLabel>Blue Book Cost:</h:outputLabel>
+            <h:outputLabel>Secondary Driver ID:</h:outputLabel>
+         </h:panelGrid> 
          <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
          <h:commandButton value="Generate Policy"/>
       </h:form>

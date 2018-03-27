@@ -22,7 +22,7 @@
                 <f:validateLength maximum="40"/>
             </h:inputText>
             <h:outputLabel>Gender:</h:outputLabel>
-            <h:selectOneRadio id="osSelectOneRadio" required="true"
+            <h:selectOneRadio id="genderSelectOneRadio" required="true"
                requiredMessage="Please select a gender"
                value="#{validationBean.gender}">
                <f:selectItem itemValue="Male" itemLabel="Male"/>
@@ -54,8 +54,8 @@
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"
                 value="#{validationBean.address}"
-                validatorMessage="Address must be at least than 15 characters">
-                <f:validateLength minimum="15"/>
+                validatorMessage="Address must be fewer than 30 characters">
+                <f:validateLength maximum="30"/>
             </h:inputText>
             <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
@@ -79,15 +79,13 @@
                 <f:validateRegex pattern="^[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
             <h:outputLabel>Drivers License Number:</h:outputLabel>
-            <h:inputText id="licenseNumberInputText" required="true"
-                requiredMessage="Please enter drivers license number"
+            <h:inputText id="licenseNumberInputText" 
                 value="#{validationBean.licenseNumber}"
                 validatorMessage="Drivers license number must be at least than 10 characters">
                 <f:validateLength minimum="10"/>
             </h:inputText>
             <h:outputLabel>License Issue Date:</h:outputLabel>
-            <h:inputText id="licenseDateInputText" required="true"
-                requiredMessage="Please enter license issue date(yyyy-mm-dd)"
+            <h:inputText id="licenseDateInputText" 
                 value="#{validationBean.licenseDate}"
                 validatorMessage="Invalid date format">
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>

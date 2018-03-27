@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- autoQuoteResult.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Auto Quote</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Automotive Quote</h1>
+         <h:outputLabel>Quote ID:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Date Quoted:</h:outputLabel>
+            <h:outputLabel>Expiry Date:</h:outputLabel>
+            <h:outputLabel>Base Premium:</h:outputLabel>
+            <h:outputLabel>Tax:</h:outputLabel>
+            <h:outputLabel>Total:</h:outputLabel>
+         </h:panelGrid> 
+         <h:outputLabel>Vehicle ID:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Vehicle Make:</h:outputLabel>
+            <h:outputLabel>Vehicle Model:</h:outputLabel>
+            <h:outputLabel>Vehicle Year:</h:outputLabel>
+            <h:outputLabel>Plate Number:</h:outputLabel>
+            <h:outputLabel>Blue Book Cost:</h:outputLabel>
+            <h:outputLabel>Secondary Driver ID:</h:outputLabel>
+         </h:panelGrid> 
+         <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton value="Generate Policy"/>
+      </h:form>
+   </h:body>
+</html>

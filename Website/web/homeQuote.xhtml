@@ -39,8 +39,8 @@
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"
                 value="#{validationBean.address}"
-                validatorMessage="Address must be at least than 15 characters">
-                <f:validateLength minimum="15"/>
+                validatorMessage="Address must be fewer than 30 characters">
+                <f:validateLength maximum="30"/>
             </h:inputText>
             <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"

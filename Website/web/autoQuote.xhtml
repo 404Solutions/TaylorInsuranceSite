@@ -40,10 +40,11 @@
                 requiredMessage="Please enter plate number"
                 value="#{validationBean.plateNumber}"
                 validatorMessage="Invalid plate number format">
-                <f:validateRegex pattern="^[A-Z]{1,3}-[A-Z]{1,2}-[0-9]{1,4}$"/>
+                <f:validateRegex pattern="^[A-Z]{1,3}[0-9]{1,4}$"/>
             </h:inputText>
+            <h:commandButton value="Add Second Driver" action="secondDriverInfo?faces-redirect=true"/>
          </h:panelGrid>    
-         <h:commandButton value="Submit"/>
+         <h:commandButton value="Submit" action="autoQuoteResult?faces-redirect=true"/>
          <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>

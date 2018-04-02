@@ -14,17 +14,16 @@
          <h1>User Information</h1>
          <h:outputLabel>Client ID:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Name:</h:outputLabel>
-            <h:outputLabel>Gender:</h:outputLabel>
-            <h:outputLabel>Date of Birth:</h:outputLabel>
-            <h:outputLabel>Phone:</h:outputLabel>
-            <h:outputLabel>E-mail:</h:outputLabel>
-            <h:outputLabel>Address:</h:outputLabel>
-            <h:outputLabel>City:</h:outputLabel>
-            <h:outputLabel>Province:</h:outputLabel>
-            <h:outputLabel>Postal Code:</h:outputLabel>
-            <h:outputLabel>Drivers License Number:</h:outputLabel>
-            <h:outputLabel>License Issue Date:</h:outputLabel>
+            <h:outputLabel>Name: #{UserBean.name}</h:outputLabel>
+            <h:outputLabel>Gender: #{UserBean.gender}</h:outputLabel>
+            <h:outputLabel>Date of Birth: #{UserBean.dob}</h:outputLabel>
+            <h:outputLabel>Phone: #{UserBean.phone}</h:outputLabel>
+            <h:outputLabel>Address: #{UserBean.address}</h:outputLabel>
+            <h:outputLabel>City: #{UserBean.city}</h:outputLabel>
+            <h:outputLabel>Province: #{UserBean.province}</h:outputLabel>
+            <h:outputLabel>Postal Code: #{UserBean.postalCode}</h:outputLabel>
+            <h:outputLabel>Drivers License Number: #{UserBean.licenseNumber}</h:outputLabel>
+            <h:outputLabel>License Issue Date: #{UserBean.licenseDate}</h:outputLabel>
          </h:panelGrid>
          <h:commandButton value="Edit" action="editUserProfile?faces-redirect=true"/>
          <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>

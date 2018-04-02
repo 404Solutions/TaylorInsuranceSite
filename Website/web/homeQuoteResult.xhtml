@@ -14,21 +14,21 @@
          <h1>Home Quote</h1>
          <h:outputLabel>Quote ID:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Date Quoted:</h:outputLabel>
-            <h:outputLabel>Expiry Date:</h:outputLabel>
-            <h:outputLabel>Base Premium:</h:outputLabel>
-            <h:outputLabel>Tax:</h:outputLabel>
-            <h:outputLabel>Total:</h:outputLabel>
+            <h:outputLabel>Date Quoted: #{HomeQuoteBean.startDate}</h:outputLabel>
+            <h:outputLabel>Expiry Date: #{HomeQuoteBean.endDate}</h:outputLabel>
+            <h:outputLabel>Base Premium: #{HomeQuoteBean.basePremium}</h:outputLabel>
+            <h:outputLabel>Tax: #{HomeQuoteBean.tax}</h:outputLabel>
+            <h:outputLabel>Total: #{HomeQuoteBean.total}</h:outputLabel>
          </h:panelGrid> 
          <h:outputLabel>Home ID:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Year Built:</h:outputLabel>
-            <h:outputLabel>Type of Dwelling:</h:outputLabel>
-            <h:outputLabel>Heating Type:</h:outputLabel>
-            <h:outputLabel>Address:</h:outputLabel>
-            <h:outputLabel>City:</h:outputLabel>
-            <h:outputLabel>Province:</h:outputLabel>
-            <h:outputLabel>Postal Code:</h:outputLabel>
+            <h:outputLabel>Year Built: #{HomeQuoteBean.homeYear}</h:outputLabel>
+            <h:outputLabel>Type of Dwelling: #{HomeQuoteBean.homeType}</h:outputLabel>
+            <h:outputLabel>Heating Type: #{HomeQuoteBean.heatingType}</h:outputLabel>
+            <h:outputLabel>Address: #{HomeQuoteBean.address}</h:outputLabel>
+            <h:outputLabel>City: #{HomeQuoteBean.city}</h:outputLabel>
+            <h:outputLabel>Province: #{HomeQuoteBean.province}</h:outputLabel>
+            <h:outputLabel>Postal Code: #{HomeQuoteBean.postalCode}</h:outputLabel>
          </h:panelGrid> 
          <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
          <h:commandButton value="Generate Policy"/>

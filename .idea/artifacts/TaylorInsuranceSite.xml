@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="TaylorInsuranceSite">
+    <output-path>$PROJECT_DIR$/out/artifacts/TaylorInsuranceSite</output-path>
+    <root id="root">
+      <element id="directory" name="lib">
+        <element id="archive" name="TaylorInsuranceSite.jar">
+          <element id="module-output" name="TaylorInsuranceSite" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

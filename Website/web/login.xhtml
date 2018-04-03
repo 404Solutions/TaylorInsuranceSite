@@ -15,17 +15,17 @@
             <h1>User Login</h1>
             <p>Please fill in all fields and click Login</p>
             <h:panelGrid columns="1" style="height: 96px; width:456px;">
-                <h:outputLabel>Username:</h:outputLabel>
-                <h:inputText id="usernameInputText" required="true"
-                    requiredMessage="Please enter username"
-                    value="#{validationBean.username}"
-                    validatorMessage="Username must be at least than 4 characters">
-                    <f:validateLength minimum="4"/>
+                <h:outputLabel>E-mail:</h:outputLabel>
+                <h:inputText id="emailInputText" required="true"
+                             requiredMessage="Please enter e-mail"
+                             value="#{LoginBean.email}"
+                             validatorMessage="Invalid e-mail address format">
+                    <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 </h:inputText>
                 <h:outputLabel>Password:</h:outputLabel>
                 <h:inputSecret id="passwordInputText" required="true"
                     requiredMessage="Please enter password"
-                    value="#{validationBean.password}"
+                    value="#{LoginBean.password}"
                     validatorMessage="Password must be at least 8 characters long">
                     <f:validateLength minimum="8"/>
                 </h:inputSecret>

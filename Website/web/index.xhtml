@@ -9,15 +9,19 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Home</title>
+        <link href="index.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <h:form>
+            <header>
+            <h:graphicImage url="companyLogo.png" dir="ltr"/>
             <h1>Home</h1>
+            </header>
             <h:panelGrid columns="1" style="height: 96px; width:456px;">
-                <h:commandButton value="About Us" action="aboutUs?faces-redirect=true"/>
-                <h:commandButton value="Contact Us" action="contactUs?faces-redirect=true"/>
-                <h:commandButton value="Sign Up" action="signUp?faces-redirect=true"/>
-                <h:commandButton value="Login" action="login?faces-redirect=true"/>
+                <h:commandButton styleClass="button" value="About Us" action="aboutUs?faces-redirect=true"/>
+                <h:commandButton styleClass="button" value="Contact Us" action="contactUs?faces-redirect=true"/>
+                <h:commandButton styleClass="button" value="Sign Up" action="signUp?faces-redirect=true"/>
+                <h:commandButton styleClass="button" value="Login" action="login?faces-redirect=true"/>
             </h:panelGrid>
         </h:form>
     </h:body>

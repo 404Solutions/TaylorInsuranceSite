@@ -50,13 +50,6 @@
                 validatorMessage="Invalid phone number format">
                 <f:validateRegex pattern="((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}"/>
             </h:inputText>
-            <h:outputLabel>E-mail:</h:outputLabel>
-            <h:inputText id="emailInputText" required="true"
-                requiredMessage="Please enter e-mail"
-                value="#{UserBean.email}"
-                validatorMessage="Invalid e-mail address format">
-                <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
-            </h:inputText>
             <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"
                 requiredMessage="Please enter address"

@@ -1,0 +1,22 @@
+graphicImage{
+    display:inline; 
+    float: left;
+}
+
+p{
+    display: inline;
+    font-size: 50px;
+    color: #1761a0;
+}
+
+.button{
+    list-style-type: none;
+    line-height: 2em;
+    background: #7e7e7e;
+    font-weight: bold;
+}
+
+.button:hover{
+    background: #1761a0;
+}
+

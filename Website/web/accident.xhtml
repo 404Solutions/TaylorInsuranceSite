@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- accident.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Accidents</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Accident</h1>
+         <p>Please fill in all fields and click submit</p>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Responsible Driver ID:</h:outputLabel>
+            <h:inputText id="responsibleDriverInputText" required="true"
+                requiredMessage="Please enter driver ID"
+                value=""
+                validatorMessage="ID must be fewer than 10 characters">
+                <f:validateLength maximum="10"/>
+            </h:inputText>
+            <h:outputLabel>Date of Accident:</h:outputLabel>
+            <h:inputText id="accidentDateInputText" required="true"
+                         requiredMessage="Please enter date of accident (yyyy-mm-dd)"
+                         value=""
+                         validatorMessage="Invalid date format">
+               <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
+            </h:inputText>
+            <h:outputLabel>Are you responsible?</h:outputLabel>
+            <h:selectOneRadio id="responsibleSelectOneRadio" required="true"
+               requiredMessage="Please select yes or no"
+               value="">
+               <f:selectItem itemValue="Yes" itemLabel="Yes"/>
+               <f:selectItem itemValue="No" itemLabel="No"/>
+            </h:selectOneRadio>
+         </h:panelGrid>
+         <h:commandButton value="Submit" action="autoQuote?faces-redirect=true"/>
+         <h:commandButton value="Cancel" action="autoQuote?faces-redirect=true" immediate="true"/>
+      </h:form>
+   </h:body>
+</html>
+
+

@@ -9,14 +9,14 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Home</title>
-        <link href="index.css" rel="stylesheet" type="text/css"/>
+        <h:outputStylesheet name="index.css" library="css"/>
     </h:head>
     <h:body>
         <h:form>
-            <header>
+            <p>
             <h:graphicImage url="companyLogo.png" dir="ltr"/>
-            <h1>Home</h1>
-            </header>
+            Home
+            </p>
             <h:panelGrid columns="1" style="height: 96px; width:456px;">
                 <h:commandButton styleClass="button" value="About Us" action="aboutUs?faces-redirect=true"/>
                 <h:commandButton styleClass="button" value="Contact Us" action="contactUs?faces-redirect=true"/>

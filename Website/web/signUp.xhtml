@@ -9,10 +9,22 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Sign Up</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="index.css" library="css"/>
     </h:head>
     <h:body>
+        <header>
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance</p>
+        </header>
+        <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="Home" action="index?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="About Us" action="aboutUs?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Contact Us" action="contactUs?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Login" action="login?faces-redirect=true"/>
+        </h:form>
         <h:form>
-            <h1>Sign Up</h1>
+            <h3><bold>Sign Up</bold></h3>
             <p>Please fill in all fields and click Sign Up</p>
             <h3>Login Information</h3>
             <h:panelGrid columns="1" style="height: 96px; width:456px;">
@@ -38,10 +50,11 @@
                     <f:validateLength minimum="8"/>
                 </h:inputSecret>
             </h:panelGrid>
-            <h:commandButton value="Sign Up" action="option?faces-redirect=true" />
-            <h:commandButton value="Cancel" action="index?faces-redirect=true" immediate="true"/>
-        </h:form>
+            <h:commandButton styleClass="button" value="Sign Up" action="option?faces-redirect=true" />
+            <h:commandButton styleClass="button" value="Cancel" action="index?faces-redirect=true" immediate="true"/>
+        </h:form>  
     </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>
 
 

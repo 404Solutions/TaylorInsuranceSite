@@ -9,12 +9,23 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Contact Us</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="index.css" library="css"/>
     </h:head>
     <h:body>
-        <h1>Contact Us</h1>
-        <p>Input info how to contact us!</p>    
-        <h:form>
-            <h:commandButton value="Home" action="index?faces-redirect=true" /> 
+        <header>
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance</p>
+        </header>
+        <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="Home" action="index?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="About Us" action="aboutUs?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Contact Us" action="contactUs?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Sign Up" action="signUp?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Login" action="login?faces-redirect=true"/>
         </h:form>
+        <h3><bold>Contact Us</bold></h3>
+        <p>Input info how to contact us!</p>    
     </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>

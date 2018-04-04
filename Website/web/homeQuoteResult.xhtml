@@ -12,15 +12,15 @@
    <h:body>
       <h:form>
          <h1>Home Quote</h1>
-         <h:outputLabel>Quote ID:</h:outputLabel>
+         <h:outputLabel>Quote ID: #{HomeQuoteBean.quoteID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Date Quoted: #{HomeQuoteBean.startDate}</h:outputLabel>
             <h:outputLabel>Expiry Date: #{HomeQuoteBean.endDate}</h:outputLabel>
             <h:outputLabel>Base Premium: #{HomeQuoteBean.basePremium}</h:outputLabel>
             <h:outputLabel>Tax: #{HomeQuoteBean.tax}</h:outputLabel>
             <h:outputLabel>Total: #{HomeQuoteBean.total}</h:outputLabel>
-         </h:panelGrid> 
-         <h:outputLabel>Home ID:</h:outputLabel>
+         </h:panelGrid>
+         <h:outputLabel>Home Information:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Year Built: #{HomeQuoteBean.homeYear}</h:outputLabel>
             <h:outputLabel>Type of Dwelling: #{HomeQuoteBean.homeType}</h:outputLabel>
@@ -29,7 +29,7 @@
             <h:outputLabel>City: #{HomeQuoteBean.city}</h:outputLabel>
             <h:outputLabel>Province: #{HomeQuoteBean.province}</h:outputLabel>
             <h:outputLabel>Postal Code: #{HomeQuoteBean.postalCode}</h:outputLabel>
-         </h:panelGrid> 
+         </h:panelGrid>
          <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
          <h:commandButton value="Generate Policy" action="homePolicy?faces-redirect=true"/>
       </h:form>

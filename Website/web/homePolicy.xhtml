@@ -12,24 +12,24 @@
    <h:body>
       <h:form>
          <h1>Home Policy</h1>
-         <h:outputLabel>Policy ID:</h:outputLabel>
+         <h:outputLabel>Policy ID: #{HomePolicyBean.PolicyID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Start Date: </h:outputLabel>
-            <h:outputLabel>End Date: </h:outputLabel>
-            <h:outputLabel>Base Premium: </h:outputLabel>
-            <h:outputLabel>Tax: </h:outputLabel>
-            <h:outputLabel>Total: </h:outputLabel>
-         </h:panelGrid> 
-         <h:outputLabel>Home ID:</h:outputLabel>
+            <h:outputLabel>Policy Date: #{HomePolicyBean.startDate}</h:outputLabel>
+            <h:outputLabel>Expiry Date: #{HomePolicyBean.endDate}</h:outputLabel>
+            <h:outputLabel>Base Premium: #{HomePolicyBean.basePremium}</h:outputLabel>
+            <h:outputLabel>Tax: #{HomePolicyBean.tax}</h:outputLabel>
+            <h:outputLabel>Total: #{HomePolicyBean.total}</h:outputLabel>
+         </h:panelGrid>
+         <h:outputLabel>Home Information:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Year Built: }</h:outputLabel>
-            <h:outputLabel>Type of Dwelling: </h:outputLabel>
-            <h:outputLabel>Heating Type: </h:outputLabel>
-            <h:outputLabel>Address: </h:outputLabel>
-            <h:outputLabel>City: </h:outputLabel>
-            <h:outputLabel>Province: </h:outputLabel>
-            <h:outputLabel>Postal Code: </h:outputLabel>
-         </h:panelGrid> 
+            <h:outputLabel>Year Built: #{HomePolicyBean.homeYear}</h:outputLabel>
+            <h:outputLabel>Type of Dwelling: #{HomePolicyBean.homeType}</h:outputLabel>
+            <h:outputLabel>Heating Type: #{HomePolicyBean.heatingType}</h:outputLabel>
+            <h:outputLabel>Address: #{HomePolicyBean.address}</h:outputLabel>
+            <h:outputLabel>City: #{HomePolicyBean.city}</h:outputLabel>
+            <h:outputLabel>Province: #{HomePolicyBean.province}</h:outputLabel>
+            <h:outputLabel>Postal Code: #{HomePolicyBean.postalCode}</h:outputLabel>
+         </h:panelGrid>
          <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
          <h:commandButton value="Renew Policy"/>
       </h:form>

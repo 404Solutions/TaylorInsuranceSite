@@ -4,9 +4,10 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name = "HomeQuoteBean")
 public class ValidationBean implements Serializable{
 
+    private String QuoteID
     private String homeYear;
-    private String homeType;
-    private String heatingType;
+    private int homeType;
+    private int heatingType;
     private String address;
     private String city;
     private String province;
@@ -17,6 +18,14 @@ public class ValidationBean implements Serializable{
     private Double tax;
     private Double total;
 
+    public String getQuoteID() {
+        return QuoteID;
+    }
+
+    public void setQuoteID(String quoteID) {
+        QuoteID = quoteID;
+    }
+
     public String getHomeYear() {
         return homeYear;
     }
@@ -25,19 +34,19 @@ public class ValidationBean implements Serializable{
         this.homeYear = homeYear;
     }
 
-    public String getHomeType() {
+    public int getHomeType() {
         return homeType;
     }
 
-    public void setHomeType(String homeType) {
+    public void setHomeType(int homeType) {
         this.homeType = homeType;
     }
 
-    public String getHeatingType() {
+    public int getHeatingType() {
         return heatingType;
     }
 
-    public void setHeatingType(String heatingType) {
+    public void setHeatingType(int heatingType) {
         this.heatingType = heatingType;
     }
 

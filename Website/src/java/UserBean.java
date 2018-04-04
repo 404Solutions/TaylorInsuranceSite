@@ -16,6 +16,7 @@ public class ValidationBean implements Serializable{
     private String postalCode;
     private String licenseNumber;
     private String licenseDate;
+    private int location;
 
     public String getFirstName() {
         return firstName;
@@ -113,4 +114,11 @@ public class ValidationBean implements Serializable{
         this.licenseDate = licenseDate;
     }
 
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
 }

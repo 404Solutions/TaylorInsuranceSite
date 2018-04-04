@@ -12,24 +12,24 @@
    <h:body>
       <h:form>
          <h1>Vehicle Policy</h1>
-         <h:outputLabel>Policy ID:</h:outputLabel>
+         <h:outputLabel>Policy ID: #{VehiclePolicyBean.PolicyID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Start Date: </h:outputLabel>
-            <h:outputLabel>End Date: </h:outputLabel>
-            <h:outputLabel>Base Premium: </h:outputLabel>
-            <h:outputLabel>Tax: </h:outputLabel>
-            <h:outputLabel>Total: </h:outputLabel>
+            <h:outputLabel>Policy Date: #{VehiclePolicyBean.startDate}</h:outputLabel>
+            <h:outputLabel>Expiry Date: #{VehiclePolicyBean.endDate}</h:outputLabel>
+            <h:outputLabel>Base Premium: #{VehiclePolicyBean.basePremium}</h:outputLabel>
+            <h:outputLabel>Tax: #{VehiclePolicyBean.tax}</h:outputLabel>
+            <h:outputLabel>Total: #{VehiclePolicyBean.total}</h:outputLabel>
             <h:outputLabel>Number of Accidents: </h:outputLabel>
-         </h:panelGrid> 
-         <h:outputLabel>Vehicle ID:</h:outputLabel>
+         </h:panelGrid>
+         <h:outputLabel>Vehicle Information:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Vehicle Value: </h:outputLabel>
-            <h:outputLabel>Vehicle Make: </h:outputLabel>
-            <h:outputLabel>Vehicle Model: </h:outputLabel>
-            <h:outputLabel>Vehicle Year: </h:outputLabel>
-            <h:outputLabel>Plate Number: </h:outputLabel>
+            <h:outputLabel>Vehicle Value: #{VehiclePolicyBean.vehicleValue}</h:outputLabel>
+            <h:outputLabel>Vehicle Make: #{VehiclePolicyBean.vehicleMake}</h:outputLabel>
+            <h:outputLabel>Vehicle Model: #{VehiclePolicyBean.vehicleModel}</h:outputLabel>
+            <h:outputLabel>Vehicle Year: #{VehiclePolicyBean.vehicleYear}</h:outputLabel>
+            <h:outputLabel>Plate Number: #{VehiclePolicyBean.plateNumber}</h:outputLabel>
             <h:outputLabel>Secondary Driver: #{SecondaryDriverBean.firstName} #{SecondaryDriverBean.lastName}</h:outputLabel>
-         </h:panelGrid> 
+         </h:panelGrid>
          <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
          <h:commandButton value="Renew Policy"/>
       </h:form>

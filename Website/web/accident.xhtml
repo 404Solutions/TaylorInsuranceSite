@@ -14,8 +14,8 @@
          <h1>Accident</h1>
          <p>Please fill in all fields and click submit</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Responsible Driver ID:</h:outputLabel>
-            <h:inputText id="responsibleDriverInputText" required="true"
+            <h:outputLabel>Other Driver ID:</h:outputLabel>
+            <h:inputText id="otherDriverInputText" required="true"
                 requiredMessage="Please enter driver ID"
                 value=""
                 validatorMessage="ID must be fewer than 10 characters">
@@ -36,8 +36,8 @@
                <f:selectItem itemValue="No" itemLabel="No"/>
             </h:selectOneRadio>
          </h:panelGrid>
-         <h:commandButton value="Submit" action="autoQuote?faces-redirect=true"/>
-         <h:commandButton value="Cancel" action="autoQuote?faces-redirect=true" immediate="true"/>
+         <h:commandButton value="Submit" action="vehicleQuote?faces-redirect=true"/>
+         <h:commandButton value="Cancel" action="vehicleQuote?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
 </html>

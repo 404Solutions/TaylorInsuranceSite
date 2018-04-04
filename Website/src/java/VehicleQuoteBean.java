@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name = "VehicleQuoteBean")
 public class ValidationBean implements Serializable{
 
+    private String QuoteID;
     private Double vehicleValue;
     private String vehicleModel;
     private String vehicleMake;
@@ -14,6 +15,14 @@ public class ValidationBean implements Serializable{
     private Double basePremium;
     private Double tax;
     private Double total;
+
+    public String getQuoteID() {
+        return QuoteID;
+    }
+
+    public void setQuoteID(String quoteID) {
+        QuoteID = quoteID;
+    }
 
     public Double getVehicleValue() {
         return vehicleValue;

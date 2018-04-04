@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- vehiclePolicy.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Vehicle Policy</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Vehicle Policy</h1>
+         <h:outputLabel>Policy ID: #{VehiclePolicyBean.PolicyID}</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Policy Date: #{VehiclePolicyBean.startDate}</h:outputLabel>
+            <h:outputLabel>Expiry Date: #{VehiclePolicyBean.endDate}</h:outputLabel>
+            <h:outputLabel>Base Premium: #{VehiclePolicyBean.basePremium}</h:outputLabel>
+            <h:outputLabel>Tax: #{VehiclePolicyBean.tax}</h:outputLabel>
+            <h:outputLabel>Total: #{VehiclePolicyBean.total}</h:outputLabel>
+            <h:outputLabel>Number of Accidents: </h:outputLabel>
+         </h:panelGrid>
+         <h:outputLabel>Vehicle Information:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Vehicle Value: #{VehiclePolicyBean.vehicleValue}</h:outputLabel>
+            <h:outputLabel>Vehicle Make: #{VehiclePolicyBean.vehicleMake}</h:outputLabel>
+            <h:outputLabel>Vehicle Model: #{VehiclePolicyBean.vehicleModel}</h:outputLabel>
+            <h:outputLabel>Vehicle Year: #{VehiclePolicyBean.vehicleYear}</h:outputLabel>
+            <h:outputLabel>Plate Number: #{VehiclePolicyBean.plateNumber}</h:outputLabel>
+            <h:outputLabel>Secondary Driver: #{SecondaryDriverBean.firstName} #{SecondaryDriverBean.lastName}</h:outputLabel>
+         </h:panelGrid>
+         <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton value="Renew Policy"/>
+      </h:form>
+   </h:body>
+</html>

@@ -9,20 +9,22 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Home</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
         <h:outputStylesheet name="index.css" library="css"/>
     </h:head>
-    <h:body>
+    <h:body class="">
         <h:form>
             <p>
-            <h:graphicImage url="companyLogo.png" dir="ltr"/>
-            Home
+                <h:graphicImage url="companyLogo.png" dir="ltr"/>
+                Home
             </p>
-            <h:panelGrid columns="1" style="height: 96px; width:456px;">
+            <br/><br/>
+            <div class="navbar-btn">
                 <h:commandButton styleClass="button" value="About Us" action="aboutUs?faces-redirect=true"/>
                 <h:commandButton styleClass="button" value="Contact Us" action="contactUs?faces-redirect=true"/>
                 <h:commandButton styleClass="button" value="Sign Up" action="signUp?faces-redirect=true"/>
                 <h:commandButton styleClass="button" value="Login" action="login?faces-redirect=true"/>
-            </h:panelGrid>
+            </div>
         </h:form>
     </h:body>
 </html>

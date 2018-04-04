@@ -12,7 +12,7 @@
    <h:body>
       <h:form>
          <h1>Vehicle Quote</h1>
-         <h:outputLabel>Quote ID:</h:outputLabel>
+         <h:outputLabel>Quote ID: #{VehicleQuoteBean.QuoteID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Date Quoted: #{VehicleQuoteBean.startDate}</h:outputLabel>
             <h:outputLabel>Expiry Date: #{VehicleQuoteBean.endDate}</h:outputLabel>
@@ -21,7 +21,7 @@
             <h:outputLabel>Total: #{VehicleQuoteBean.total}</h:outputLabel>
             <h:outputLabel>Number of Accidents: </h:outputLabel>
          </h:panelGrid> 
-         <h:outputLabel>Vehicle ID:</h:outputLabel>
+         <h:outputLabel>Vehicle Information:</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Vehicle Value: #{VehicleQuoteBean.vehicleValue}</h:outputLabel>
             <h:outputLabel>Vehicle Make: #{VehicleQuoteBean.vehicleMake}</h:outputLabel>

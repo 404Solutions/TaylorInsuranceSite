@@ -25,20 +25,20 @@
             <h:selectOneRadio id="dwellingRadio" required="true"
                               requiredMessage="Please enter type of dwelling"
                               value="#{HomeQuoteBean.homeType}">
-               <f:selectItem itemValue="Single Dwelling" itemLabel="Single Dwelling"/>
-               <f:selectItem itemValue="Apartment" itemLabel="Apartment"/>
-               <f:selectItem itemValue="Bungalow" itemLabel="Bungalow"/>
-               <f:selectItem itemValue="Semi-Attached" itemLabel="Semi-Attached"/>
+               <f:selectItem itemValue="1" itemLabel="Single Dwelling"/>
+               <f:selectItem itemValue="2" itemLabel="Apartment"/>
+               <f:selectItem itemValue="3" itemLabel="Bungalow"/>
+               <f:selectItem itemValue="4" itemLabel="Semi-Attached"/>
             </h:selectOneRadio>
             <h:outputLabel>Heating Type:</h:outputLabel>
             <h:selectOneRadio id="heatingRadio" required="true"
                               requiredMessage="Please enter type of heating"
                               value="#{HomeQuoteBean.heatingType}">
-               <f:selectItem itemValue="Electric" itemLabel="Electric"/>
-               <f:selectItem itemValue="Oil" itemLabel="Oil"/>
-               <f:selectItem itemValue="Wood" itemLabel="Wood"/>
-               <f:selectItem itemValue="Gas" itemLabel="Gas"/>
-               <f:selectItem itemValue="Other" itemLabel="Other"/>
+               <f:selectItem itemValue="1" itemLabel="Electric"/>
+               <f:selectItem itemValue="2" itemLabel="Oil"/>
+               <f:selectItem itemValue="3" itemLabel="Wood"/>
+               <f:selectItem itemValue="4" itemLabel="Gas"/>
+               <f:selectItem itemValue="5" itemLabel="Other"/>
             </h:selectOneRadio>
             <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"

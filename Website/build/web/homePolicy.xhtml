@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- homePolicy.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>Home Policy</title>
+   </h:head>
+   <h:body>
+      <h:form>
+         <h1>Home Policy</h1>
+         <h:outputLabel>Policy ID: #{HomePolicyBean.PolicyID}</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Policy Date: #{HomePolicyBean.startDate}</h:outputLabel>
+            <h:outputLabel>Expiry Date: #{HomePolicyBean.endDate}</h:outputLabel>
+            <h:outputLabel>Base Premium: #{HomePolicyBean.basePremium}</h:outputLabel>
+            <h:outputLabel>Tax: #{HomePolicyBean.tax}</h:outputLabel>
+            <h:outputLabel>Total: #{HomePolicyBean.total}</h:outputLabel>
+         </h:panelGrid>
+         <h:outputLabel>Home Information:</h:outputLabel>
+         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+            <h:outputLabel>Year Built: #{HomePolicyBean.homeYear}</h:outputLabel>
+            <h:outputLabel>Type of Dwelling: #{HomePolicyBean.homeType}</h:outputLabel>
+            <h:outputLabel>Heating Type: #{HomePolicyBean.heatingType}</h:outputLabel>
+            <h:outputLabel>Address: #{HomePolicyBean.address}</h:outputLabel>
+            <h:outputLabel>City: #{HomePolicyBean.city}</h:outputLabel>
+            <h:outputLabel>Province: #{HomePolicyBean.province}</h:outputLabel>
+            <h:outputLabel>Postal Code: #{HomePolicyBean.postalCode}</h:outputLabel>
+         </h:panelGrid>
+         <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton value="Renew Policy"/>
+      </h:form>
+   </h:body>
+</html>

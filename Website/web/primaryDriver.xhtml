@@ -44,9 +44,9 @@
                 <h:selectOneRadio id="osSelectOneRadio" required="true"
                                   requiredMessage="Please select a gender"
                                   value="#{UserBean.gender}">
-                    <f:selectItem itemValue="Male" itemLabel="Male"/>
-                    <f:selectItem itemValue="Female" itemLabel="Female"/>
-                    <f:selectItem itemValue="Other" itemLabel="Other"/>
+                    <f:selectItem itemValue="M" itemLabel="Male"/>
+                    <f:selectItem itemValue="F" itemLabel="Female"/>
+                    <f:selectItem itemValue="O" itemLabel="Other"/>
                 </h:selectOneRadio>
                 <h:outputLabel>Date of Birth:</h:outputLabel>
                 <h:inputText id="dobInputText" required="true"
@@ -61,6 +61,13 @@
                              value="#{UserBean.phone}"
                              validatorMessage="Invalid phone number format">
                     <f:validateRegex pattern="((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}"/>
+                </h:inputText>
+                <h:outputLabel>E-mail:</h:outputLabel>
+                <h:inputText id="emailInputText" required="true"
+                             requiredMessage="Please enter e-mail"
+                             value="#{UserBean.email}"
+                             validatorMessage="Invalid e-mail address format">
+                    <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 </h:inputText>
                 <h:outputLabel>Address:</h:outputLabel>
                 <h:inputText id="addressInputText" required="true"
@@ -111,7 +118,7 @@
                     <f:selectItem itemValue="3" itemLabel="Outside Avalon"/>
                 </h:selectOneRadio>
             </h:panelGrid>
-            <h:commandButton styleClass="button" value="Submit" action="vehicleQuote?faces-redirect=true" />
+            <h:commandButton styleClass="button" value="Submit" action="#{UserBean.createPrimaryDriver}" />
             <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
         </h:form>
     </h:body>

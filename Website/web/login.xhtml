@@ -30,19 +30,19 @@
                 <h:outputLabel>E-mail:</h:outputLabel>
                 <h:inputText id="emailInputText" required="true"
                              requiredMessage="Please enter e-mail"
-                             value="#{LoginBean.email}"
+                             value="#{AccountBean.email}"
                              validatorMessage="Invalid e-mail address format">
                     <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 </h:inputText>
                 <h:outputLabel>Password:</h:outputLabel>
                 <h:inputSecret id="passwordInputText" required="true"
                     requiredMessage="Please enter password"
-                    value="#{LoginBean.password}"
+                    value="#{AccountBean.password}"
                     validatorMessage="Password must be at least 8 characters long">
                     <f:validateLength minimum="8"/>
                 </h:inputSecret>
             </h:panelGrid>
-            <h:commandButton styleClass="button" value="Login" action="viewUserProfile?faces-redirect=true" /> 
+            <h:commandButton styleClass="button" value="Login" action="#{AccountBean.login}" />
             <h:commandButton styleClass="button" value="Cancel" action="index?faces-redirect=true" immediate="true"/>
         </h:form>
     </h:body>

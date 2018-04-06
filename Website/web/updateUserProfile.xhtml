@@ -2,110 +2,117 @@
 
 <!-- updateUserProfile.xhtml -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-   <h:head>
-      <title>Update User Information</title>
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-        <h:outputStylesheet name="styles.css" library="css"/>
-   </h:head>
-   <h:body>
-       <header>
-             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
-             <p>Taylor Insurance</p>
-         </header>
-         <h:form class="btn-group">
-            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
-         </h:form>
-      <h:form>
-         <h2>Update User Information</h2>
-         <p>Please fill in all fields</p>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+<h:head>
+    <title>Update User Information</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <h:outputStylesheet name="styles.css" library="css"/>
+</h:head>
+<h:body>
+    <header>
+        <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+        <p>Taylor Insurance</p>
+    </header>
+    <h:form class="btn-group">
+        <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+    </h:form>
+    <h:form>
+        <h2>Update User Information</h2>
+        <p>Please fill in all fields</p>
+        <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>First Name:</h:outputLabel>
             <h:inputText id="firstNameInputText" required="true"
                          requiredMessage="Please enter first name"
                          value="#{UserBean.firstName}"
                          validatorMessage="First name must be fewer than 40 characters">
-               <f:validateLength maximum="40"/>
+                <f:validateLength maximum="40"/>
             </h:inputText>
             <h:outputLabel>Last Name:</h:outputLabel>
             <h:inputText id="lastNameInputText" required="true"
                          requiredMessage="Please enter last name"
                          value="#{UserBean.lastName}"
                          validatorMessage="Last name must be fewer than 40 characters">
-               <f:validateLength maximum="40"/>
+                <f:validateLength maximum="40"/>
             </h:inputText>
             <h:outputLabel>Gender:</h:outputLabel>
             <h:selectOneRadio id="genderSelectOneRadio" required="true"
-               requiredMessage="Please select a gender"
-               value="#{UserBean.gender}">
-               <f:selectItem itemValue="Male" itemLabel="Male"/>
-               <f:selectItem itemValue="Female" itemLabel="Female"/>
-               <f:selectItem itemValue="Other" itemLabel="Other"/>
+                              requiredMessage="Please select a gender"
+                              value="#{UserBean.gender}">
+                <f:selectItem itemValue="M" itemLabel="Male"/>
+                <f:selectItem itemValue="F" itemLabel="Female"/>
+                <f:selectItem itemValue="O" itemLabel="Other"/>
             </h:selectOneRadio>
             <h:outputLabel>Date of Birth:</h:outputLabel>
             <h:inputText id="dobInputText" required="true"
-                requiredMessage="Please enter date of birth(yyyy-mm-dd)"
-                value="#{UserBean.dob}"
-                validatorMessage="Invalid date of birth format">
+                         requiredMessage="Please enter date of birth(yyyy-mm-dd)"
+                         value="#{UserBean.dob}"
+                         validatorMessage="Invalid date of birth format">
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
             <h:outputLabel>Phone:</h:outputLabel>
             <h:inputText id="phoneInputText" required="true"
-                requiredMessage="Please enter phone number"
-                value="#{UserBean.phone}"
-                validatorMessage="Invalid phone number format">
+                         requiredMessage="Please enter phone number"
+                         value="#{UserBean.phone}"
+                         validatorMessage="Invalid phone number format">
                 <f:validateRegex pattern="((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}"/>
+            </h:inputText>
+            <h:outputLabel>E-mail:</h:outputLabel>
+            <h:inputText id="emailInputText" required="true"
+                         requiredMessage="Please enter e-mail"
+                         value="#{UserBean.email}"
+                         validatorMessage="Invalid e-mail address format">
+                <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
             </h:inputText>
             <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"
-                requiredMessage="Please enter address"
-                value="#{UserBean.address}"
-                validatorMessage="Address must be fewer than 30 characters">
+                         requiredMessage="Please enter address"
+                         value="#{UserBean.address}"
+                         validatorMessage="Address must be fewer than 30 characters">
                 <f:validateLength maximum="30"/>
             </h:inputText>
             <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
-                requiredMessage="Please enter city"
-                value="#{UserBean.city}"
-                validatorMessage="City must be fewer than 15 characters">
+                         requiredMessage="Please enter city"
+                         value="#{UserBean.city}"
+                         validatorMessage="City must be fewer than 15 characters">
                 <f:validateLength maximum="15"/>
             </h:inputText>
             <h:outputLabel>Province:</h:outputLabel>
             <h:inputText id="provinceInputText" required="true"
-                requiredMessage="Please enter province"
-                value="#{UserBean.province}"
-                validatorMessage="Province must be at least than 2 characters">
+                         requiredMessage="Please enter province"
+                         value="#{UserBean.province}"
+                         validatorMessage="Province must be at least than 2 characters">
                 <f:validateLength minimum="2"/>
             </h:inputText>
             <h:outputLabel>Postal Code:</h:outputLabel>
             <h:inputText id="postalCodeInputText" required="true"
-                requiredMessage="Please enter postal code"
-                value="#{UserBean.postalCode}"
-                validatorMessage="Invalid postal code format">
+                         requiredMessage="Please enter postal code"
+                         value="#{UserBean.postalCode}"
+                         validatorMessage="Invalid postal code format">
                 <f:validateRegex pattern="^[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
             <h:outputLabel>Drivers License Number:</h:outputLabel>
-            <h:inputText id="licenseNumberInputText" 
-                value="#{UserBean.licenseNumber}"
-                validatorMessage="Drivers license number must be at least than 10 characters">
+            <h:inputText id="licenseNumberInputText"
+                         value="#{UserBean.licenseNumber}"
+                         validatorMessage="Drivers license number must be at least than 10 characters">
                 <f:validateLength minimum="10"/>
             </h:inputText>
             <h:outputLabel>License Issue Date:</h:outputLabel>
-            <h:inputText id="licenseDateInputText" 
-                value="#{UserBean.licenseDate}"
-                validatorMessage="Invalid date format">
+            <h:inputText id="licenseDateInputText"
+                         value="#{UserBean.licenseDate}"
+                         validatorMessage="Invalid date format">
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
-         </h:panelGrid>
-         <h:commandButton styleClass="button" value="Update" action="viewUserProfile?faces-redirect=true"/>
-         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
-      </h:form>
-   </h:body>
-     <footer>Add Stuff for footer</footer>
+        </h:panelGrid>
+        <h:commandButton styleClass="button" value="Update" action="#{UserBean.updateUserAccount}"/>
+        <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+    </h:form>
+</h:body>
+<footer>Add Stuff for footer</footer>
 </html>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!-- vehicleQuote.xhtml -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Vehicle Quote Additional Information</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <h:outputStylesheet name="styles.css" library="css"/>
+</h:head>
+<h:body>
+    <header>
+        <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+        <p>Taylor Insurance</p>
+    </header>
+    <h:form class="btn-group">
+        <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+    </h:form>
+    <h:form>
+        <h:commandButton styleClass="button" value="Add Second Driver" action="secondDriverInfo?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Add Accident" action="accident?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Submit" action="vehicleQuoteResult?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+    </h:form>
+</h:body>
+<footer>Add Stuff for footer</footer>
+</html>

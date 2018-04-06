@@ -24,7 +24,7 @@
          </h:form>
       <h:form>
          <h2>Vehicle Quote</h2>
-         <h:outputLabel>Quote ID: #{VehicleQuoteBean.QuoteID}</h:outputLabel>
+         <h:outputLabel>Quote ID: #{VehicleQuoteBean.quoteID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Date Quoted: #{VehicleQuoteBean.startDate}</h:outputLabel>
             <h:outputLabel>Expiry Date: #{VehicleQuoteBean.endDate}</h:outputLabel>
@@ -43,7 +43,7 @@
             <h:outputLabel>Secondary Driver: #{SecondaryDriverBean.firstName} #{SecondaryDriverBean.lastName}</h:outputLabel>
          </h:panelGrid> 
          <h:commandButton styleClass="button" value="Exit" action="viewUserProfile?faces-redirect=true" immediate="true"/>
-         <h:commandButton styleClass="button" value="Generate Policy" action="vehiclePolicy?faces-redirect=true"/>
+         <h:commandButton styleClass="button" value="Generate Policy" action="#{VehicleQuoteBean.createPolicy}"/>
       </h:form>
    </h:body>
      <footer>Add Stuff for footer</footer>

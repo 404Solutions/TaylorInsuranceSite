@@ -44,9 +44,9 @@
             <h:selectOneRadio id="genderSelectOneRadio" required="true"
                requiredMessage="Please select a gender"
                value="#{SecondaryDriverBean.gender}">
-               <f:selectItem itemValue="Male" itemLabel="Male"/>
-               <f:selectItem itemValue="Female" itemLabel="Female"/>
-               <f:selectItem itemValue="Other" itemLabel="Other"/>
+               <f:selectItem itemValue="M" itemLabel="Male"/>
+               <f:selectItem itemValue="F" itemLabel="Female"/>
+               <f:selectItem itemValue="O" itemLabel="Other"/>
             </h:selectOneRadio>
             <h:outputLabel>Date of Birth:</h:outputLabel>
             <h:inputText id="dobInputText" required="true"
@@ -112,8 +112,8 @@
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
          </h:panelGrid>
-         <h:commandButton styleClass="button" value="Submit" action="vehicleQuoteResult?faces-redirect=true"/>
-         <h:commandButton styleClass="button" value="Cancel" action="vehicleQuote?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Submit" action="#{SecondaryDriverBean.addSecondaryDriver}"/>
+         <h:commandButton styleClass="button" value="Cancel" action="vehicleQuoteAdditions?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
     <footer>Add Stuff for footer</footer>

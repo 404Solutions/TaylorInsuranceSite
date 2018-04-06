@@ -8,10 +8,25 @@
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
       <title>Vehicle Quote Form</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
-      <h:form>
-         <h1>Vehicle Quote</h1>
+         <header>
+             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+             <p>Taylor Insurance</p>
+         </header>
+         <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Home Quote" action="homeQuote?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Home Owner Info" action="homeOwner?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="vehicleQuote?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Primary Driver Info" action="primaryDriver?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Secondary Driver Info" action="secondDriverInfo?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+         </h:form>
+         <h:form>
+         <h2>Vehicle Quote</h2>
          <p>Please fill in all fields and click Submit</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Vehicle Value:</h:outputLabel>
@@ -49,11 +64,12 @@
                 validatorMessage="Invalid plate number format">
                 <f:validateRegex pattern="^[A-Z]{1,3}[0-9]{1,4}$"/>
             </h:inputText>
-            <h:commandButton value="Add Second Driver" action="secondDriverInfo?faces-redirect=true"/>
-            <h:commandButton value="Add Accident" action="accident?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Add Second Driver" action="secondDriverInfo?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Add Accident" action="accident?faces-redirect=true"/>
          </h:panelGrid>    
-         <h:commandButton value="Submit" action="vehicleQuoteResult?faces-redirect=true"/>
-         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Submit" action="vehicleQuoteResult?faces-redirect=true"/>
+         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>

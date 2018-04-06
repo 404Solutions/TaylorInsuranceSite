@@ -8,10 +8,25 @@
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
       <title>Update User Information</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
+       <header>
+             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+             <p>Taylor Insurance</p>
+         </header>
+         <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Home Quote" action="homeQuote?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Home Owner Info" action="homeOwner?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="vehicleQuote?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Primary Driver Info" action="primaryDriver?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Secondary Driver Info" action="secondDriverInfo?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+         </h:form>
       <h:form>
-         <h1>Update User Information</h1>
+         <h2>Update User Information</h2>
          <p>Please fill in all fields</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>First Name:</h:outputLabel>
@@ -91,8 +106,9 @@
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
          </h:panelGrid>
-         <h:commandButton value="Update" action="userProfile?faces-redirect=true"/>
-         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Update" action="viewUserProfile?faces-redirect=true"/>
+         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
+     <footer>Add Stuff for footer</footer>
 </html>

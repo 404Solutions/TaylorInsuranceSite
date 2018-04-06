@@ -8,10 +8,22 @@
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
       <title>Home Policy</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
+       <header>
+             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+             <p>Taylor Insurance</p>
+         </header>
+         <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+         </h:form>
       <h:form>
-         <h1>Home Policy</h1>
+         <h2>Home Policy</h2>
          <h:outputLabel>Policy ID: #{HomePolicyBean.PolicyID}</h:outputLabel>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
             <h:outputLabel>Policy Date: #{HomePolicyBean.startDate}</h:outputLabel>
@@ -30,8 +42,9 @@
             <h:outputLabel>Province: #{HomePolicyBean.province}</h:outputLabel>
             <h:outputLabel>Postal Code: #{HomePolicyBean.postalCode}</h:outputLabel>
          </h:panelGrid>
-         <h:commandButton value="Options" action="option?faces-redirect=true" immediate="true"/>
-         <h:commandButton value="Renew Policy"/>
+         <h:commandButton styleClass="button" value="Exit" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Renew Policy"/>
       </h:form>
    </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>

@@ -8,10 +8,22 @@
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
       <title>Home Quote Form</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
+       <header>
+             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+             <p>Taylor Insurance</p>
+         </header>
+         <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+         </h:form>
       <h:form>
-         <h1>Home Quote</h1>
+         <h2>Home Quote</h2>
          <p>Please fill in all fields and click Submit</p>
          <h:panelGrid columns="4" style="height: 96px; width:456px;">
              <h:outputLabel>Year Built:</h:outputLabel>
@@ -69,8 +81,9 @@
                 <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
          </h:panelGrid>  
-         <h:commandButton value="Submit" action="homeQuoteResult?faces-redirect=true"/>
-         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Submit" action="homeQuoteResult?faces-redirect=true"/>
+         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>

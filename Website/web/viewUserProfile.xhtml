@@ -8,64 +8,77 @@
       xmlns:f="http://java.sun.com/jsf/core">
    <h:head>
       <title>User Information</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
-      <h:form>
-         <h1>User Information</h1>
-         <h:outputLabel>Client ID:</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>First Name: #{UserBean.firstName}</h:outputLabel>
-            <h:outputLabel>First Name: #{UserBean.lastName}</h:outputLabel>
-            <h:outputLabel>Gender: #{UserBean.gender}</h:outputLabel>
-            <h:outputLabel>Date of Birth: #{UserBean.dob}</h:outputLabel>
-            <h:outputLabel>Phone: #{UserBean.phone}</h:outputLabel>
-            <h:outputLabel>Address: #{UserBean.address}</h:outputLabel>
-            <h:outputLabel>City: #{UserBean.city}</h:outputLabel>
-            <h:outputLabel>Province: #{UserBean.province}</h:outputLabel>
-            <h:outputLabel>Postal Code: #{UserBean.postalCode}</h:outputLabel>
-            <h:outputLabel>Drivers License Number: #{UserBean.licenseNumber}</h:outputLabel>
-            <h:outputLabel>License Issue Date: #{UserBean.licenseDate}</h:outputLabel>
-         </h:panelGrid>
-         <h1>Home Quote</h1>
-         <h:outputLabel>Quote ID:</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Date Quoted: #{HomeQuoteBean.startDate}</h:outputLabel>
-            <h:outputLabel>Expiry Date: #{HomeQuoteBean.endDate}</h:outputLabel>
-            <h:outputLabel>Base Premium: #{HomeQuoteBean.basePremium}</h:outputLabel>
-            <h:outputLabel>Tax: #{HomeQuoteBean.tax}</h:outputLabel>
-            <h:outputLabel>Total: #{HomeQuoteBean.total}</h:outputLabel>
-         </h:panelGrid>
-         <h:outputLabel>Home Information:</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Year Built: #{HomeQuoteBean.homeYear}</h:outputLabel>
-            <h:outputLabel>Type of Dwelling: #{HomeQuoteBean.homeType}</h:outputLabel>
-            <h:outputLabel>Heating Type: #{HomeQuoteBean.heatingType}</h:outputLabel>
-            <h:outputLabel>Address: #{HomeQuoteBean.address}</h:outputLabel>
-            <h:outputLabel>City: #{HomeQuoteBean.city}</h:outputLabel>
-            <h:outputLabel>Province: #{HomeQuoteBean.province}</h:outputLabel>
-            <h:outputLabel>Postal Code: #{HomeQuoteBean.postalCode}</h:outputLabel>
-         </h:panelGrid>
-         <h1>Vehicle Quote</h1>
-         <h:outputLabel>Quote ID: #{VehicleQuoteBean.QuoteID}</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Date Quoted: #{VehicleQuoteBean.startDate}</h:outputLabel>
-            <h:outputLabel>Expiry Date: #{VehicleQuoteBean.endDate}</h:outputLabel>
-            <h:outputLabel>Base Premium: #{VehicleQuoteBean.basePremium}</h:outputLabel>
-            <h:outputLabel>Tax: #{VehicleQuoteBean.tax}</h:outputLabel>
-            <h:outputLabel>Total: #{VehicleQuoteBean.total}</h:outputLabel>
-            <h:outputLabel>Number of Accidents: </h:outputLabel>
-         </h:panelGrid>
-         <h:outputLabel>Vehicle Information:</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Vehicle Value: #{VehicleQuoteBean.vehicleValue}</h:outputLabel>
-            <h:outputLabel>Vehicle Make: #{VehicleQuoteBean.vehicleMake}</h:outputLabel>
-            <h:outputLabel>Vehicle Model: #{VehicleQuoteBean.vehicleModel}</h:outputLabel>
-            <h:outputLabel>Vehicle Year: #{VehicleQuoteBean.vehicleYear}</h:outputLabel>
-            <h:outputLabel>Plate Number: #{VehicleQuoteBean.plateNumber}</h:outputLabel>
-            <h:outputLabel>Secondary Driver: #{SecondaryDriverBean.firstName} #{SecondaryDriverBean.lastName}</h:outputLabel>
-         </h:panelGrid>
-         <h:commandButton value="Edit Profile" action="editUserProfile?faces-redirect=true"/>
-         <h:commandButton value="Cancel" action="option?faces-redirect=true" immediate="true"/>
-      </h:form>
+        <header>
+             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+             <p>Taylor Insurance</p>
+         </header>
+         <h:form class="btn-group">
+            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+         </h:form>
+        <h:form>
+           <h2>User Information</h2>
+           <h:outputLabel>Client ID:</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>First Name: #{UserBean.firstName}</h:outputLabel>
+              <h:outputLabel>First Name: #{UserBean.lastName}</h:outputLabel>
+              <h:outputLabel>Gender: #{UserBean.gender}</h:outputLabel>
+              <h:outputLabel>Date of Birth: #{UserBean.dob}</h:outputLabel>
+              <h:outputLabel>Phone: #{UserBean.phone}</h:outputLabel>
+              <h:outputLabel>Address: #{UserBean.address}</h:outputLabel>
+              <h:outputLabel>City: #{UserBean.city}</h:outputLabel>
+              <h:outputLabel>Province: #{UserBean.province}</h:outputLabel>
+              <h:outputLabel>Postal Code: #{UserBean.postalCode}</h:outputLabel>
+              <h:outputLabel>Drivers License Number: #{UserBean.licenseNumber}</h:outputLabel>
+              <h:outputLabel>License Issue Date: #{UserBean.licenseDate}</h:outputLabel>
+           </h:panelGrid>
+           <h2>Home Quote</h2>
+           <h:outputLabel>Quote ID:</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Date Quoted: #{HomeQuoteBean.startDate}</h:outputLabel>
+              <h:outputLabel>Expiry Date: #{HomeQuoteBean.endDate}</h:outputLabel>
+              <h:outputLabel>Base Premium: #{HomeQuoteBean.basePremium}</h:outputLabel>
+              <h:outputLabel>Tax: #{HomeQuoteBean.tax}</h:outputLabel>
+              <h:outputLabel>Total: #{HomeQuoteBean.total}</h:outputLabel>
+           </h:panelGrid>
+           <h:outputLabel>Home Information:</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Year Built: #{HomeQuoteBean.homeYear}</h:outputLabel>
+              <h:outputLabel>Type of Dwelling: #{HomeQuoteBean.homeType}</h:outputLabel>
+              <h:outputLabel>Heating Type: #{HomeQuoteBean.heatingType}</h:outputLabel>
+              <h:outputLabel>Address: #{HomeQuoteBean.address}</h:outputLabel>
+              <h:outputLabel>City: #{HomeQuoteBean.city}</h:outputLabel>
+              <h:outputLabel>Province: #{HomeQuoteBean.province}</h:outputLabel>
+              <h:outputLabel>Postal Code: #{HomeQuoteBean.postalCode}</h:outputLabel>
+           </h:panelGrid>
+           <h2>Vehicle Quote</h2>
+           <h:outputLabel>Quote ID: #{VehicleQuoteBean.QuoteID}</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Date Quoted: #{VehicleQuoteBean.startDate}</h:outputLabel>
+              <h:outputLabel>Expiry Date: #{VehicleQuoteBean.endDate}</h:outputLabel>
+              <h:outputLabel>Base Premium: #{VehicleQuoteBean.basePremium}</h:outputLabel>
+              <h:outputLabel>Tax: #{VehicleQuoteBean.tax}</h:outputLabel>
+              <h:outputLabel>Total: #{VehicleQuoteBean.total}</h:outputLabel>
+              <h:outputLabel>Number of Accidents: </h:outputLabel>
+           </h:panelGrid>
+           <h:outputLabel>Vehicle Information:</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Vehicle Value: #{VehicleQuoteBean.vehicleValue}</h:outputLabel>
+              <h:outputLabel>Vehicle Make: #{VehicleQuoteBean.vehicleMake}</h:outputLabel>
+              <h:outputLabel>Vehicle Model: #{VehicleQuoteBean.vehicleModel}</h:outputLabel>
+              <h:outputLabel>Vehicle Year: #{VehicleQuoteBean.vehicleYear}</h:outputLabel>
+              <h:outputLabel>Plate Number: #{VehicleQuoteBean.plateNumber}</h:outputLabel>
+              <h:outputLabel>Secondary Driver: #{SecondaryDriverBean.firstName} #{SecondaryDriverBean.lastName}</h:outputLabel>
+           </h:panelGrid>
+           <h:commandButton styleClass="button" value="Edit Profile" action="updateUserProfile?faces-redirect=true"/>
+           <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+        </h:form>
    </h:body>
+    <footer>Add Stuff for footer</footer>
 </html>

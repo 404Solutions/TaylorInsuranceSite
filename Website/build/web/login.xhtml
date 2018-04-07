@@ -48,6 +48,19 @@
             <h:commandButton styleClass="button" value="Cancel" action="index?faces-redirect=true" immediate="true"/>
         </h:form>
     </h:body>
-    <footer>Add Stuff for footer</footer>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="Home" action="index?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="About Us" action="aboutUs?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Contact Us" action="contactUs?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Sign Up" action="signUp?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Login" action="login?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>
 

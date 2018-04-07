@@ -6,11 +6,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-   <h:head>
-      <title>Home Quote</title>
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-        <h:outputStylesheet name="styles.css" library="css"/>
-   </h:head>
+    <h:head>
+       <title>Home Quote</title>
+       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+         <h:outputStylesheet name="styles.css" library="css"/>
+    </h:head>
    <h:body>
        <header>
              <h:graphicImage url="companyLogo.png" styleClass="logo"/>
@@ -45,6 +45,18 @@
          <h:commandButton styleClass="button" value="Exit" action="viewUserProfile?faces-redirect=true" immediate="true"/>
          <h:commandButton styleClass="button" value="Generate Policy" action="#{HomeQuoteBean.createPolicy}"/>
       </h:form>
-   </h:body>
-    <footer>Add Stuff for footer</footer>
+    </h:body>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="User Profile" action="viewUserProfile?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Home Quote" action="homeOwner?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Logout" action="index?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>

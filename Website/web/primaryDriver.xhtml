@@ -111,8 +111,8 @@
                 <h:inputText id="licenseNumberInputText" required="true"
                              requiredMessage="**"
                              value="#{UserBean.licenseNumber}"
-                             validatorMessage="Drivers license number must be at least than 10 characters">
-                    <f:validateLength minimum="10"/>
+                             validatorMessage="Drivers license number must be at less than 10 characters">
+                    <f:validateLength maximum="10"/>
                 </h:inputText>
                 <h:message for="licenseNumberInputText" style="color:red;" />
                 <h:outputLabel>License Issue Date:</h:outputLabel>

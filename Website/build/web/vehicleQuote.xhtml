@@ -31,7 +31,6 @@
                          requiredMessage="**"
                          value="#{VehicleQuoteBean.vehicleValue}"
                          validatorMessage="Vehicle value must be a number">
-                <f:validateRegex pattern="^[0-9]*$"/>
             </h:inputText>
             <h:message for="vehicleValueInputText" style="color:red;" />
             <h:outputLabel>Vehicle Make:</h:outputLabel>
@@ -53,9 +52,7 @@
             <h:outputLabel>Vehicle Year:</h:outputLabel>
             <h:inputText id="vehicleYearInputText" required="true"
                          requiredMessage="**(yyyy)"
-                         value="#{VehicleQuoteBean.vehicleYear}"
-                         validatorMessage="Invalid year format">
-                <f:validateRegex pattern="^\d{4}$"/>
+                         value="#{VehicleQuoteBean.vehicleYear}">
             </h:inputText>
             <h:message for="vehicleYearInputText" style="color:red;" />
             <h:outputLabel>Plate Number:</h:outputLabel>

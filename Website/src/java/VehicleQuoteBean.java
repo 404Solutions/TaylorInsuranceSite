@@ -1,27 +1,29 @@
+
 import java.io.Serializable;
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "VehicleQuoteBean")
-public class ValidationBean implements Serializable{
+public class VehicleQuoteBean implements Serializable{
 
-    private String QuoteID;
+    private String quoteID;
     private Double vehicleValue;
     private String vehicleModel;
     private String vehicleMake;
     private String vehicleYear;
     private String plateNumber;
     private Date startDate;
-    private Date enddate;
+    private Date endDate;
     private Double basePremium;
     private Double tax;
     private Double total;
 
     public String getQuoteID() {
-        return QuoteID;
+        return quoteID;
     }
 
     public void setQuoteID(String quoteID) {
-        QuoteID = quoteID;
+        this.quoteID = quoteID;
     }
 
     public Double getVehicleValue() {
@@ -72,12 +74,12 @@ public class ValidationBean implements Serializable{
         this.startDate = startDate;
     }
 
-    public Date getEnddate() {
-        return enddate;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnddate(Date enddate) {
-        this.enddate = enddate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Double getBasePremium() {
@@ -102,6 +104,10 @@ public class ValidationBean implements Serializable{
 
     public void setTotal(Double total) {
         this.total = total;
+    }
+
+    public String createPolicy() {
+        return "vehiclePolicy?faces-redirect=true";
     }
 
 }

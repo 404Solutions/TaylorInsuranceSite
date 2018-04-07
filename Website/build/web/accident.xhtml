@@ -25,31 +25,34 @@
       <h:form>
          <h2>Accident</h2>
          <p>Please fill in all fields and click submit</p>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
+         <h:panelGrid columns="6" style="height: 96px; width:456px;">
             <h:outputLabel>Other Driver ID:</h:outputLabel>
             <h:inputText id="otherDriverInputText" required="true"
-                requiredMessage="Please enter driver ID"
-                value=""
-                validatorMessage="ID must be fewer than 10 characters">
+                requiredMessage="**"
+                value="#{AccidentBean.secondaryID}"
+                validatorMessage="ID must be fewer than 10 characters.">
                 <f:validateLength maximum="10"/>
             </h:inputText>
-            <h:outputLabel>Date of Accident:</h:outputLabel>
+            <h:message for="otherDriverInputText" style="color:red;" />
+            <h:outputLabel>Year of Accident:</h:outputLabel>
             <h:inputText id="accidentDateInputText" required="true"
-                         requiredMessage="Please enter date of accident (yyyy-mm-dd)"
-                         value=""
-                         validatorMessage="Invalid date format">
-               <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
+                         requiredMessage="**(yyyy)."
+                         value="#{AccidentBean.yearOfAccident}"
+                         validatorMessage="Invalid year format.">
+               <f:validateRegex pattern="^(19|20)\d{2}$"/>
             </h:inputText>
+            <h:message for="accidentDateInputText" style="color:red;" />
             <h:outputLabel>Are you responsible?</h:outputLabel>
             <h:selectOneRadio id="responsibleSelectOneRadio" required="true"
-               requiredMessage="Please select yes or no"
-               value="">
-               <f:selectItem itemValue="Yes" itemLabel="Yes"/>
-               <f:selectItem itemValue="No" itemLabel="No"/>
+               requiredMessage="**"
+               value="#{AccidentBean.responsible}">
+               <f:selectItem itemValue="True" itemLabel="Yes"/>
+               <f:selectItem itemValue="False" itemLabel="No"/>
             </h:selectOneRadio>
+            <h:message for="responsibleSelectOneRadio" style="color:red;" />
          </h:panelGrid>
-         <h:commandButton styleClass="button" value="Submit" action="vehicleQuote?faces-redirect=true"/>
-         <h:commandButton styleClass="button" value="Cancel" action="vehicleQuote?faces-redirect=true" immediate="true"/>
+         <h:commandButton styleClass="button" value="Submit" action="#{AccidentBean.addAccident}"/>
+         <h:commandButton styleClass="button" value="Cancel" action="vehicleQuoteAdditions?faces-redirect=true" immediate="true"/>
       </h:form>
    </h:body>
     <footer>Add Stuff for footer</footer>

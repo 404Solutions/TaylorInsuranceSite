@@ -34,6 +34,7 @@
                              validatorMessage="Invalid e-mail address format">
                     <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 </h:inputText>
+                <h:message for="emailInputText" style="color:red;" />
                 <h:outputLabel>Password:</h:outputLabel>
                 <h:inputSecret id="passwordInputText" required="true"
                     requiredMessage="Please enter password"
@@ -41,6 +42,7 @@
                     validatorMessage="Password must be at least 8 characters long">
                     <f:validateLength minimum="8"/>
                 </h:inputSecret>
+                <h:message for="passwordInputText" style="color:red;" />
             </h:panelGrid>
             <h:commandButton styleClass="button" value="Login" action="#{AccountBean.login}" />
             <h:commandButton styleClass="button" value="Cancel" action="index?faces-redirect=true" immediate="true"/>

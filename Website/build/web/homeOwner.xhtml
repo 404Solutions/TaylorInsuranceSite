@@ -25,73 +25,90 @@
          </h:form>
     <h:form>
         <h2>User Information</h2>
-        <h:panelGrid columns="4" style="height: 96px; width:456px;">
+        <h:panelGrid columns="6" style="height: 96px; width:456px;">
             <h:outputLabel>First Name:</h:outputLabel>
             <h:inputText id="firstNameInputText" required="true"
-                         requiredMessage="Please enter first name"
+                         requiredMessage="**"
                          value="#{UserBean.firstName}"
-                         validatorMessage="First name must be fewer than 40 characters">
+                         validatorMessage="First name must be fewer than 40 characters.">
                 <f:validateLength maximum="40"/>
             </h:inputText>
+            <h:message for="firstNameInputText" style="color:red;" />
             <h:outputLabel>Last Name:</h:outputLabel>
             <h:inputText id="lastNameInputText" required="true"
-                         requiredMessage="Please enter last name"
+                         requiredMessage="**"
                          value="#{UserBean.lastName}"
-                         validatorMessage="Last name must be fewer than 40 characters">
+                         validatorMessage="Last name must be fewer than 40 characters.">
                 <f:validateLength maximum="40"/>
             </h:inputText>
+            <h:message for="lastNameInputText" style="color:red;" />
             <h:outputLabel>Gender:</h:outputLabel>
-            <h:selectOneRadio id="osSelectOneRadio" required="true"
-                              requiredMessage="Please select a gender"
+            <h:selectOneRadio id="genderSelectOneRadio" required="true"
+                              requiredMessage="**"
                               value="#{UserBean.gender}">
-                <f:selectItem itemValue="Male" itemLabel="Male"/>
-                <f:selectItem itemValue="Female" itemLabel="Female"/>
-                <f:selectItem itemValue="Other" itemLabel="Other"/>
+                <f:selectItem itemValue="M" itemLabel="Male"/>
+                <f:selectItem itemValue="F" itemLabel="Female"/>
+                <f:selectItem itemValue="O" itemLabel="Other"/>
             </h:selectOneRadio>
+            <h:message for="genderSelectOneRadio" style="color:red;" />
             <h:outputLabel>Date of Birth:</h:outputLabel>
             <h:inputText id="dobInputText" required="true"
-                         requiredMessage="Please enter date of birth(yyyy-mm-dd)"
+                         requiredMessage="**(yyyy-mm-dd)."
                          value="#{UserBean.dob}"
-                         validatorMessage="Invalid date of birth format">
+                         validatorMessage="Invalid date of birth format.">
                 <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
             </h:inputText>
+            <h:message for="dobInputText" style="color:red;" />
             <h:outputLabel>Phone:</h:outputLabel>
             <h:inputText id="phoneInputText" required="true"
-                         requiredMessage="Please enter phone number"
+                         requiredMessage="**"
                          value="#{UserBean.phone}"
-                         validatorMessage="Invalid phone number format">
+                         validatorMessage="Invalid phone number format.">
                 <f:validateRegex pattern="((\(\d{3}\)?)|(\d{3}-))?\d{3}-\d{4}"/>
             </h:inputText>
+            <h:message for="phoneInputText" style="color:red;" />
+            <h:outputLabel>E-mail:</h:outputLabel>
+            <h:inputText id="emailInputText" required="true"
+                         requiredMessage="**"
+                         value="#{UserBean.email}"
+                         validatorMessage="Invalid e-mail address format.">
+                <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+            </h:inputText>
+            <h:message for="emailInputText" style="color:red;" />
             <h:outputLabel>Address:</h:outputLabel>
             <h:inputText id="addressInputText" required="true"
-                         requiredMessage="Please enter address"
+                         requiredMessage="**"
                          value="#{UserBean.address}"
-                         validatorMessage="Address must be fewer than 30 characters">
+                         validatorMessage="Address must be fewer than 30 characters.">
                 <f:validateLength maximum="30"/>
             </h:inputText>
+            <h:message for="addressInputText" style="color:red;" />
             <h:outputLabel>City:</h:outputLabel>
             <h:inputText id="cityInputText" required="true"
-                         requiredMessage="Please enter city"
+                         requiredMessage="**"
                          value="#{UserBean.city}"
-                         validatorMessage="City must be fewer than 15 characters">
+                         validatorMessage="City must be fewer than 15 characters.">
                 <f:validateLength maximum="15"/>
             </h:inputText>
+            <h:message for="cityInputText" style="color:red;" />
             <h:outputLabel>Province:</h:outputLabel>
             <h:inputText id="provinceInputText" required="true"
-                         requiredMessage="Please enter province"
+                         requiredMessage="**"
                          value="#{UserBean.province}"
-                         validatorMessage="Province must be at least than 2 characters">
+                         validatorMessage="Province must be at least than 2 characters.">
                 <f:validateLength minimum="2"/>
             </h:inputText>
+            <h:message for="provinceInputText" style="color:red;" />
             <h:outputLabel>Postal Code:</h:outputLabel>
             <h:inputText id="postalCodeInputText" required="true"
-                         requiredMessage="Please enter postal code"
+                         requiredMessage="**"
                          value="#{UserBean.postalCode}"
-                         validatorMessage="Invalid postal code format">
+                         validatorMessage="Invalid postal code format.">
                 <f:validateRegex pattern="^[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
             </h:inputText>
+            <h:message for="postalCodeInputText" style="color:red;" />
         </h:panelGrid>
-        <h:commandButton styleClass="button" value="Submit" action="homeQuote?faces-redirect=true" />
+        <h:commandButton styleClass="button" value="Submit" action="#{UserBean.createHomeOwner}" />
         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
     </h:form>
 </h:body>

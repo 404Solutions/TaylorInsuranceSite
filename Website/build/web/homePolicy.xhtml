@@ -6,12 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-   <h:head>
-      <title>Home Policy</title>
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <h:head>
+        <title>Home Policy</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
         <h:outputStylesheet name="styles.css" library="css"/>
-   </h:head>
-   <h:body>
+    </h:head>
+    <h:body>
        <header>
              <h:graphicImage url="companyLogo.png" styleClass="logo"/>
              <p>Taylor Insurance</p>
@@ -22,29 +22,41 @@
             <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
             <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
          </h:form>
-      <h:form>
-         <h2>Home Policy</h2>
-         <h:outputLabel>Policy ID: #{HomePolicyBean.PolicyID}</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Policy Date: #{HomePolicyBean.startDate}</h:outputLabel>
-            <h:outputLabel>Expiry Date: #{HomePolicyBean.endDate}</h:outputLabel>
-            <h:outputLabel>Base Premium: #{HomePolicyBean.basePremium}</h:outputLabel>
-            <h:outputLabel>Tax: #{HomePolicyBean.tax}</h:outputLabel>
-            <h:outputLabel>Total: #{HomePolicyBean.total}</h:outputLabel>
-         </h:panelGrid>
-         <h:outputLabel>Home Information:</h:outputLabel>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Year Built: #{HomePolicyBean.homeYear}</h:outputLabel>
-            <h:outputLabel>Type of Dwelling: #{HomePolicyBean.homeType}</h:outputLabel>
-            <h:outputLabel>Heating Type: #{HomePolicyBean.heatingType}</h:outputLabel>
-            <h:outputLabel>Address: #{HomePolicyBean.address}</h:outputLabel>
-            <h:outputLabel>City: #{HomePolicyBean.city}</h:outputLabel>
-            <h:outputLabel>Province: #{HomePolicyBean.province}</h:outputLabel>
-            <h:outputLabel>Postal Code: #{HomePolicyBean.postalCode}</h:outputLabel>
-         </h:panelGrid>
-         <h:commandButton styleClass="button" value="Exit" action="viewUserProfile?faces-redirect=true" immediate="true"/>
-         <h:commandButton styleClass="button" value="Renew Policy"/>
-      </h:form>
-   </h:body>
-    <footer>Add Stuff for footer</footer>
+        <h:form>
+           <h2>Home Policy</h2>
+           <h:outputLabel>Policy ID: #{HomePolicyBean.PolicyID}</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Policy Date: #{HomePolicyBean.startDate}</h:outputLabel>
+              <h:outputLabel>Expiry Date: #{HomePolicyBean.endDate}</h:outputLabel>
+              <h:outputLabel>Base Premium: #{HomePolicyBean.basePremium}</h:outputLabel>
+              <h:outputLabel>Tax: #{HomePolicyBean.tax}</h:outputLabel>
+              <h:outputLabel>Total: #{HomePolicyBean.total}</h:outputLabel>
+           </h:panelGrid>
+           <h:outputLabel>Home Information:</h:outputLabel>
+           <h:panelGrid columns="4" style="height: 96px; width:456px;">
+              <h:outputLabel>Year Built: #{HomePolicyBean.homeYear}</h:outputLabel>
+              <h:outputLabel>Type of Dwelling: #{HomePolicyBean.homeType}</h:outputLabel>
+              <h:outputLabel>Heating Type: #{HomePolicyBean.heatingType}</h:outputLabel>
+              <h:outputLabel>Address: #{HomePolicyBean.address}</h:outputLabel>
+              <h:outputLabel>City: #{HomePolicyBean.city}</h:outputLabel>
+              <h:outputLabel>Province: #{HomePolicyBean.province}</h:outputLabel>
+              <h:outputLabel>Postal Code: #{HomePolicyBean.postalCode}</h:outputLabel>
+           </h:panelGrid>
+           <h:commandButton styleClass="button" value="Exit" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+           <h:commandButton styleClass="button" value="Renew Policy"/>
+        </h:form>
+    </h:body>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="User Profile" action="viewUserProfile?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Home Quote" action="homeOwner?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Logout" action="index?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>

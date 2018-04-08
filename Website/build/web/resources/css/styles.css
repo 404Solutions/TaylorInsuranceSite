@@ -38,9 +38,17 @@ h2{
 
 footer{
     margin-top: 100px;
-    height: 100px; 
+    height: 175px; 
     border-top: solid #7e7e7e; 
     background: white;
     float: bottom;
+}
+
+.link{
+    color: #1761a0
+}
+
+.link:hover{
+    color: black
 }
 

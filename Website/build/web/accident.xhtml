@@ -12,47 +12,62 @@
         <h:outputStylesheet name="styles.css" library="css"/>
    </h:head>
    <h:body>
-       <header>
+        <header>
              <h:graphicImage url="companyLogo.png" styleClass="logo"/>
              <p>Taylor Insurance</p>
-         </header>
-         <h:form class="btn-group">
-            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
-         </h:form>
-      <h:form>
-         <h2>Accident</h2>
-         <p>Please fill in all fields and click submit</p>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-            <h:outputLabel>Other Driver ID:</h:outputLabel>
-            <h:inputText id="otherDriverInputText" required="true"
-                requiredMessage="Please enter driver ID"
-                value=""
-                validatorMessage="ID must be fewer than 10 characters">
-                <f:validateLength maximum="10"/>
-            </h:inputText>
-            <h:outputLabel>Date of Accident:</h:outputLabel>
-            <h:inputText id="accidentDateInputText" required="true"
-                         requiredMessage="Please enter date of accident (yyyy-mm-dd)"
-                         value=""
-                         validatorMessage="Invalid date format">
-               <f:validateRegex pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"/>
-            </h:inputText>
-            <h:outputLabel>Are you responsible?</h:outputLabel>
-            <h:selectOneRadio id="responsibleSelectOneRadio" required="true"
-               requiredMessage="Please select yes or no"
-               value="">
-               <f:selectItem itemValue="Yes" itemLabel="Yes"/>
-               <f:selectItem itemValue="No" itemLabel="No"/>
-            </h:selectOneRadio>
-         </h:panelGrid>
-         <h:commandButton styleClass="button" value="Submit" action="vehicleQuote?faces-redirect=true"/>
-         <h:commandButton styleClass="button" value="Cancel" action="vehicleQuote?faces-redirect=true" immediate="true"/>
-      </h:form>
-   </h:body>
-    <footer>Add Stuff for footer</footer>
+        </header>
+        <h:form class="btn-group">
+           <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+           <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+           <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+           <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+        </h:form>
+        <h:form>
+           <h2>Accident</h2>
+           <p>Please fill in all fields and click submit</p>
+           <h:panelGrid columns="6" style="height: 96px; width:456px;">
+              <h:outputLabel>Other Driver ID:</h:outputLabel>
+              <h:inputText id="otherDriverInputText" required="true"
+                  requiredMessage="**"
+                  value="#{AccidentBean.secondaryID}"
+                  validatorMessage="ID must be fewer than 10 characters.">
+                  <f:validateLength maximum="10"/>
+              </h:inputText>
+              <h:message for="otherDriverInputText" style="color:red;" />
+              <h:outputLabel>Year of Accident:</h:outputLabel>
+              <h:inputText id="accidentDateInputText" required="true"
+                           requiredMessage="**(yyyy)."
+                           value="#{AccidentBean.yearOfAccident}"
+                           validatorMessage="Invalid year format.">
+                 <f:validateRegex pattern="^(19|20)\d{2}$"/>
+              </h:inputText>
+              <h:message for="accidentDateInputText" style="color:red;" />
+              <h:outputLabel>Are you responsible?</h:outputLabel>
+              <h:selectOneRadio id="responsibleSelectOneRadio" required="true"
+                 requiredMessage="**"
+                 value="#{AccidentBean.responsible}">
+                 <f:selectItem itemValue="True" itemLabel="Yes"/>
+                 <f:selectItem itemValue="False" itemLabel="No"/>
+              </h:selectOneRadio>
+              <h:message for="responsibleSelectOneRadio" style="color:red;" />
+           </h:panelGrid>
+           <h:commandButton styleClass="button" value="Submit" action="#{AccidentBean.addAccident}"/>
+           <h:commandButton styleClass="button" value="Cancel" action="vehicleQuoteAdditions?faces-redirect=true" immediate="true"/>
+        </h:form>
+    </h:body>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="User Profile" action="viewUserProfile?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Home Quote" action="homeOwner?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Logout" action="index?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>
 
 

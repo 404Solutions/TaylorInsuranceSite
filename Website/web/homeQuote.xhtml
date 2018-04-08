@@ -6,91 +6,111 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-   <h:head>
-      <title>Home Quote Form</title>
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <h:head>
+        <title>Home Quote Form</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
         <h:outputStylesheet name="styles.css" library="css"/>
-   </h:head>
-   <h:body>
-       <header>
-             <h:graphicImage url="companyLogo.png" styleClass="logo"/>
-             <p>Taylor Insurance</p>
-         </header>
-         <h:form class="btn-group">
-            <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
-            <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
-         </h:form>
-      <h:form>
-         <h2>Home Quote</h2>
-         <p>Please fill in all fields and click Submit</p>
-         <h:panelGrid columns="4" style="height: 96px; width:456px;">
-             <h:outputLabel>Home Value:</h:outputLabel>
-             <h:inputText id="homeValueInputText" required="true"
-                requiredMessage="Please enter home value"
-                value="#{HomeQuoteBean.homeValue}"
-                validatorMessage="Home value must be less than $10,000,000,000">
-                <f:validateLength maximum="12"/>
-            </h:inputText>
-            <h:outputLabel>Year Built:</h:outputLabel>
-            <h:inputText id="homeYearInputText" required="true"
-                requiredMessage="Please enter year built(yyyy)"
-                value="#{HomeQuoteBean.homeYear}"
-                validatorMessage="Invalid year format">
-                <f:validateRegex pattern="^\d{4}$"/>
-            </h:inputText>
-            <h:outputLabel>Type of Dwelling:</h:outputLabel>
-            <h:selectOneRadio id="dwellingRadio" required="true"
-                              requiredMessage="Please enter type of dwelling"
-                              value="#{HomeQuoteBean.homeType}">
-               <f:selectItem itemValue="1" itemLabel="Single Dwelling"/>
-               <f:selectItem itemValue="2" itemLabel="Apartment"/>
-               <f:selectItem itemValue="3" itemLabel="Bungalow"/>
-               <f:selectItem itemValue="4" itemLabel="Semi-Attached"/>
-            </h:selectOneRadio>
-            <h:outputLabel>Heating Type:</h:outputLabel>
-            <h:selectOneRadio id="heatingRadio" required="true"
-                              requiredMessage="Please enter type of heating"
-                              value="#{HomeQuoteBean.heatingType}">
-               <f:selectItem itemValue="1" itemLabel="Electric"/>
-               <f:selectItem itemValue="2" itemLabel="Oil"/>
-               <f:selectItem itemValue="3" itemLabel="Wood"/>
-               <f:selectItem itemValue="4" itemLabel="Gas"/>
-               <f:selectItem itemValue="5" itemLabel="Other"/>
-            </h:selectOneRadio>
-            <h:outputLabel>Address:</h:outputLabel>
-            <h:inputText id="addressInputText" required="true"
-                requiredMessage="Please enter address"
-                value="#{HomeQuoteBean.address}"
-                validatorMessage="Address must be fewer than 30 characters">
-                <f:validateLength maximum="30"/>
-            </h:inputText>
-            <h:outputLabel>City:</h:outputLabel>
-            <h:inputText id="cityInputText" required="true"
-                requiredMessage="Please enter city"
-                value="#{HomeQuoteBean.city}"
-                validatorMessage="City must be fewer than 15 characters">
-                <f:validateLength maximum="15"/>
-            </h:inputText>
-            <h:outputLabel>Province:</h:outputLabel>
-            <h:inputText id="provinceInputText" required="true"
-                requiredMessage="Please enter province"
-                value="#{HomeQuoteBean.province}"
-                validatorMessage="Province must be at least than 2 characters">
-                <f:validateLength minimum="2"/>
-            </h:inputText>
-            <h:outputLabel>Postal Code:</h:outputLabel>
-            <h:inputText id="postalCodeInputText" required="true"
-                requiredMessage="Please enter postal code"
-                value="#{HomeQuoteBean.postalCode}"
-                validatorMessage="Invalid postal code format">
-                <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
-            </h:inputText>
-         </h:panelGrid>  
-         <h:commandButton styleClass="button" value="Submit" action="#{HomeQuoteBean.createQuote}"/>
-         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
-      </h:form>
-   </h:body>
-    <footer>Add Stuff for footer</footer>
+    </h:head>
+    <h:body>
+        <header>
+              <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+              <p>Taylor Insurance</p>
+          </header>
+          <h:form class="btn-group">
+             <h:commandButton styleClass="button" value="User Profile" action="viewUserProfile?faces-redirect=true"/>
+             <h:commandButton styleClass="button" value="Create Home Quote" action="homeOwner?faces-redirect=true"/>
+             <h:commandButton styleClass="button" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/>
+             <h:commandButton styleClass="button" value="Logout" action="index?faces-redirect=true"/>
+          </h:form>
+       <h:form>
+          <h2>Home Quote</h2>
+          <p>Please fill in all fields and click Submit</p>
+          <h:panelGrid columns="6" style="height: 96px; width:456px;">
+              <h:outputLabel>Home Value:</h:outputLabel>
+              <h:inputText id="homeValueInputText" required="true"
+                 requiredMessage="**"
+                 value="#{HomeQuoteBean.homeValue}"
+                 validatorMessage="Home value must be less than $10,000,000,000">
+                 <f:validateLength maximum="12"/>
+             </h:inputText>
+              <h:message for="homeValueInputText" style="color:red;" />
+             <h:outputLabel>Year Built:</h:outputLabel>
+             <h:inputText id="homeYearInputText" required="true"
+                 requiredMessage="**(yyyy)"
+                 value="#{HomeQuoteBean.homeYear}"
+                 validatorMessage="Invalid year format">
+                 <f:validateRegex pattern="^\d{4}$"/>
+             </h:inputText>
+             <h:message for="homeYearInputText" style="color:red;" />
+             <h:outputLabel>Type of Dwelling:</h:outputLabel>
+             <h:selectOneRadio id="dwellingRadio" required="true"
+                               requiredMessage="**"
+                               value="#{HomeQuoteBean.homeType}">
+                <f:selectItem itemValue="1" itemLabel="Single Dwelling"/>
+                <f:selectItem itemValue="2" itemLabel="Apartment"/>
+                <f:selectItem itemValue="3" itemLabel="Bungalow"/>
+                <f:selectItem itemValue="4" itemLabel="Semi-Attached"/>
+             </h:selectOneRadio>
+             <h:message for="dwellingRadio" style="color:red;" />
+             <h:outputLabel>Heating Type:</h:outputLabel>
+             <h:selectOneRadio id="heatingRadio" required="true"
+                               requiredMessage="**"
+                               value="#{HomeQuoteBean.heatingType}">
+                <f:selectItem itemValue="1" itemLabel="Electric"/>
+                <f:selectItem itemValue="2" itemLabel="Oil"/>
+                <f:selectItem itemValue="3" itemLabel="Wood"/>
+                <f:selectItem itemValue="4" itemLabel="Gas"/>
+                <f:selectItem itemValue="5" itemLabel="Other"/>
+             </h:selectOneRadio>
+             <h:message for="heatingRadio" style="color:red;" />
+             <h:outputLabel>Address:</h:outputLabel>
+             <h:inputText id="addressInputText" required="true"
+                 requiredMessage="**"
+                 value="#{HomeQuoteBean.address}"
+                 validatorMessage="Address must be fewer than 30 characters">
+                 <f:validateLength maximum="30"/>
+             </h:inputText>
+             <h:message for="addressInputText" style="color:red;" />
+             <h:outputLabel>City:</h:outputLabel>
+             <h:inputText id="cityInputText" required="true"
+                 requiredMessage="**"
+                 value="#{HomeQuoteBean.city}"
+                 validatorMessage="City must be fewer than 15 characters">
+                 <f:validateLength maximum="15"/>
+             </h:inputText>
+             <h:message for="cityInputText" style="color:red;" />
+             <h:outputLabel>Province:</h:outputLabel>
+             <h:inputText id="provinceInputText" required="true"
+                 requiredMessage="**"
+                 value="#{HomeQuoteBean.province}"
+                 validatorMessage="Province must be at least than 2 characters">
+                 <f:validateLength minimum="2"/>
+             </h:inputText>
+             <h:message for="provinceInputText" style="color:red;" />
+             <h:outputLabel>Postal Code:</h:outputLabel>
+             <h:inputText id="postalCodeInputText" required="true"
+                 requiredMessage="**"
+                 value="#{HomeQuoteBean.postalCode}"
+                 validatorMessage="Invalid postal code format">
+                 <f:validateRegex pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
+             </h:inputText>
+             <h:message for="postalCodeInputText" style="color:red;" />
+          </h:panelGrid>  
+          <h:commandButton styleClass="button" value="Submit" action="#{HomeQuoteBean.createQuote}"/>
+          <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
+       </h:form>
+    </h:body>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="User Profile" action="viewUserProfile?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Home Quote" action="homeOwner?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Create Vehicle Quote" action="primaryDriver?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Logout" action="index?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>

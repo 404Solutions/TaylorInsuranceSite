@@ -1,9 +1,22 @@
+//import Insurance.HomeOwner;
+
 import java.io.Serializable;
+import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+import javax.validation.Validation;
 
+@SessionScoped
+//@RequestScoped
 @ManagedBean(name = "UserBean")
-public class ValidationBean implements Serializable{
+public class UserBean implements Serializable {
 
+
+    @ManagedProperty("#{AccountBean}")
+    private AccountBean accountBean;
+//    private HomeOwner homeOwner;
+    private int userId;
     private String firstName;
     private String lastName;
     private String gender;
@@ -17,6 +30,30 @@ public class ValidationBean implements Serializable{
     private String licenseNumber;
     private String licenseDate;
     private int location;
+
+    public AccountBean getAccountBean() {
+        return accountBean;
+    }
+
+    public void setAccountBean(AccountBean accountBean) {
+        this.accountBean = accountBean;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+//    public HomeOwner getHomeOwner() {
+//        return homeOwner;
+//    }
+//
+//    public void setHomeOwner(HomeOwner homeOwner) {
+//        this.homeOwner = homeOwner;
+//    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -121,4 +158,40 @@ public class ValidationBean implements Serializable{
     public void setLocation(int location) {
         this.location = location;
     }
+
+    public String createHomeOwner() {
+
+        this.setUserId(accountBean.getUserId());
+
+        //Managers.HomeOwnerManager manager = new Managers.HomeOwnerManager();
+
+        //this.homeOwner = manager.insertHomeOwner(this.userId, this.firstName,
+                //this.lastName, this.dob, this.address, this.city, this.province,
+                //this.postalCode, this.phone, this.email, this.gender);
+
+        return "homeQuote?faces-redirect=true";
+    }
+
+    public String createPrimaryDriver() {
+
+        this.setUserId(accountBean.getUserId());
+
+        //Managers.DriversManager manager = new Managers.DriversManager();
+
+        //Insurance.PrimaryDriver driver = manager.insertPrimaryDriver(this.userId, this.firstName,
+               //this.lastName, this.dob, this.address, this.city, this.province,
+                //this.postalCode, this.phone, this.email, this.gender, this.licenseNumber,
+                //this.licenseDate, this.location);
+
+        //System.out.printf("Id: %d", driver.getUserId());
+
+        //TODO redirect to vehicleQuote page.
+        //return "vehicleQuote?faces-redirect=true";
+        return "viewUserProfile?faces-redirect=true";
+    }
+
+    public String updateUserAccount() {
+        return "viewUserProfile?faces-redirect=true";
+    }
+
 }

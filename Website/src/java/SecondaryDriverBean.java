@@ -1,8 +1,9 @@
+
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "SecondaryDriverBean")
-public class ValidationBean implements Serializable{
+public class SecondaryDriverBean implements Serializable{
 
     private String firstName;
     private String lastName;
@@ -111,6 +112,10 @@ public class ValidationBean implements Serializable{
 
     public void setLicenseDate(String licenseDate) {
         this.licenseDate = licenseDate;
+    }
+
+    public String addSecondaryDriver() {
+        return "vehicleQuoteAdditions?faces-redirect=true";
     }
 
 }

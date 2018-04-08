@@ -1,11 +1,24 @@
+
+//import Insurance.Home;
+//import Insurance.HomeOwner;
+//import Insurance.HomePremium;
+//import Managers.HomeManager;
+//import Managers.HomeQuoteManager;
+
 import java.io.Serializable;
+import java.util.Date;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 
 @ManagedBean(name = "HomeQuoteBean")
-public class ValidationBean implements Serializable{
+public class HomeQuoteBean implements Serializable{
 
-    private String QuoteID
-    private String homeYear;
+    @ManagedProperty("#{UserBean.homeOwner}")
+//    private HomeOwner homeOwner;
+//    private Home home;
+    private String QuoteID;
+    private double value;
+    private int homeYear;
     private int homeType;
     private int heatingType;
     private String address;
@@ -13,10 +26,26 @@ public class ValidationBean implements Serializable{
     private String province;
     private String postalCode;
     private Date startDate;
-    private Date enddate;
-    private Double basePremium;
-    private Double tax;
-    private Double total;
+    private Date endDate;
+    private double basePremium;
+    private double tax;
+    private double total;
+
+//    public HomeOwner getHomeOwner() {
+//        return homeOwner;
+//    }
+//
+//    public void setHomeOwner(HomeOwner homeOwner) {
+//        this.homeOwner = homeOwner;
+//    }
+//
+//    public Home getHome() {
+//        return home;
+//    }
+//
+//    public void setHome(Home home) {
+//        this.home = home;
+//    }
 
     public String getQuoteID() {
         return QuoteID;
@@ -26,11 +55,19 @@ public class ValidationBean implements Serializable{
         QuoteID = quoteID;
     }
 
-    public String getHomeYear() {
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public int getHomeYear() {
         return homeYear;
     }
 
-    public void setHomeYear(String homeYear) {
+    public void setHomeYear(int homeYear) {
         this.homeYear = homeYear;
     }
 
@@ -90,35 +127,58 @@ public class ValidationBean implements Serializable{
         this.startDate = startDate;
     }
 
-    public Date getEnddate() {
-        return enddate;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnddate(Date enddate) {
-        this.enddate = enddate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
-    public Double getBasePremium() {
+    public double getBasePremium() {
         return basePremium;
     }
 
-    public void setBasePremium(Double basePremium) {
+    public void setBasePremium(double basePremium) {
         this.basePremium = basePremium;
     }
 
-    public Double getTax() {
+    public double getTax() {
         return tax;
     }
 
-    public void setTax(Double tax) {
+    public void setTax(double tax) {
         this.tax = tax;
     }
 
-    public Double getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(double total) {
         this.total = total;
+    }
+
+    public String createQuote() {
+
+//        HomeManager homeManager = new HomeManager();
+//        HomeQuoteManager homeQuoteManager = new HomeQuoteManager();
+//
+//        home = homeManager.insertHome(this.value, this.homeYear, this.homeType, this.heatingType, this.postalCode,
+//                this.address, this.city, this.province);
+//
+//        basePremium = HomePremium.calcPremium(this.value, this.homeYear, this.homeType, this.heatingType);
+
+        this.tax = basePremium * 0.15;
+        this.total = basePremium * 1.15;
+
+        //homeQuoteManager.createNewQuote(basePremium, this.tax, this.total, home, homeOwner);
+
+        //TODO Call HomePremium.calcPremium()
+        return "homeQuoteResult?faces-redirect=true";
+    }
+
+    public String createPolicy() {
+        return "homePolicy?faces-redirect=true";
     }
 }

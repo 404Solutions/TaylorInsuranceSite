@@ -31,30 +31,38 @@
                 <h:outputLabel>E-mail:</h:outputLabel>
                 <h:inputText id="emailInputText" required="true"
                              requiredMessage="Please enter e-mail"
-                             value="#{UserBean.email}"
+                             value="#{AccountBean.email}"
                              validatorMessage="Invalid e-mail address format">
                     <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
                 </h:inputText>
+                <h:message for="emailInputText" style="color:red;" />
                 <h:outputLabel>Password:</h:outputLabel>
                 <h:inputSecret id="passwordInputText" required="true"
                     requiredMessage="Please enter password"
-                    value="#{UserBean.password}"
+                    value="#{AccountBean.password}"
                     validatorMessage="Password must be at least 8 characters long">
                     <f:validateLength minimum="8"/>
                 </h:inputSecret>
-                <h:outputLabel>Re-enter Password:</h:outputLabel>
-                <h:inputSecret id="secondPasswordInputText" required="true"
-                    requiredMessage="Please re-enter password"
-                    value="#{UserBean.secondPassword}"
-                    validatorMessage="Password must be at least 8 characters long">
-                    <f:validateLength minimum="8"/>
-                </h:inputSecret>
+                <h:message for="passwordInputText" style="color:red;" />
             </h:panelGrid>
-            <h:commandButton styleClass="button" value="Sign Up" action="viewUserProfile?faces-redirect=true" />
+            <h:commandButton styleClass="button" value="Sign Up" action="#{AccountBean.createAccount}" />
             <h:commandButton styleClass="button" value="Cancel" action="index?faces-redirect=true" immediate="true"/>
         </h:form>  
     </h:body>
-    <footer>Add Stuff for footer</footer>
+    <footer>
+        <h:panelGrid columns="3" style="height: 96px; width:900px;">
+            <h:graphicImage url="companyLogo.png" styleClass="logo"/>
+            <p>Taylor Insurance - Headquarters<br/>50 Emerald Drive<br/>Conche,NL A1K 0Y5<br/>Phone: (709)875-9585<br/>
+                Fax: (709)875-9555</p>
+            <h:form style="float: right;">                   
+                <h:commandLink styleClass="link" value="Home" action="index?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="About Us" action="aboutUs?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Contact Us" action="contactUs?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Sign Up" action="signUp?faces-redirect=true"/><br/>
+                <h:commandLink styleClass="link" value="Login" action="login?faces-redirect=true"/><br/>
+            </h:form>
+        </h:panelGrid>
+    </footer>
 </html>
 
 

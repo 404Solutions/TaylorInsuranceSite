@@ -9,7 +9,6 @@ body{
 header{
     color: #1761a0;
     text-align: center; 
-    height: 90px; 
     border-bottom: solid #7e7e7e;
     font-size: 3.8em; 
     text-decoration: none;
@@ -37,8 +36,8 @@ h2{
 }
 
 footer{
-    margin-top: 100px;
-    height: 175px; 
+    margin-top: 8%;
+    height: 15%; 
     border-top: solid #7e7e7e; 
     background: white;
     float: bottom;

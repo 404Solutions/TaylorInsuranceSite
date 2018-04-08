@@ -27,7 +27,7 @@
         <h:commandButton styleClass="button" value="Add Second Driver" action="secondDriverInfo?faces-redirect=true"/>
         <h:commandButton styleClass="button" value="Add Accident" action="accident?faces-redirect=true"/>
         <br/><br/><br/>
-        <h:commandButton styleClass="button" value="Submit" action="vehicleQuoteResult?faces-redirect=true"/>
+        <h:commandButton styleClass="button" value="Submit" action="#{VehicleQuoteBean.createQuote}"/>
         <h:commandButton styleClass="button" value="Cancel" action="viewUserProfile?faces-redirect=true" immediate="true"/>
     </h:form>
 </h:body>
